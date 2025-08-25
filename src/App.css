@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+:root {
+  --soft-pink: #f5c7bd;
+  --soft-gray: #d9e1dc;
+  --soft-peach: #f9e0ca;
+  --soft-cream: #f2ede5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: var(--soft-cream);
+  color: #333;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.navbar,
+.card {
+  border-radius: 15px;
+  padding: 15px 20px;
+  background-color: var(--soft-peach);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.nav-link {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--soft-pink);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--soft-pink);
+  color: #fff;
+}
+
+button:hover {
+  background-color: #f28f7b;
+}
+
+/* Make the app container a column flex so footer stays at the bottom */
+#root,
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh; /* full viewport height */
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  flex: 1; /* main content expands, footer stays below */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hover-enlarge:hover {
+  transform: scale(1.03);
 }

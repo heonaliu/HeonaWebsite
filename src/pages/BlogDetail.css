@@ -1,0 +1,121 @@
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Blog detail wrapper */
+.blog-detail {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Blog image */
+.detail-image {
+  width: 100%;
+  max-width: 500px; /* keeps image from being too wide */
+  max-height: 300px; /* optional height limit */
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Date text */
+.date {
+  font-size: 0.9rem;
+  color: gray;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* Like button */
+.like-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.like-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Comments */
+.comments-section {
+  margin-top: 2rem;
+}
+
+.comment {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+
+.comment small {
+  display: block;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+/* Success message */
+.success-msg {
+  background: #d4edda;
+  color: #155724;
+  padding: 0.5rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* Comment form */
+.comment-form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-form input,
+.comment-form textarea {
+  margin-bottom: 0.8rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical; /* up/down only */
+}
+
+.comment-form button {
+  background-color: #d9e1dc;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.comment-form button:hover {
+  transform: scale(1.05);
+}
+
+/* Pagination */
+.pagination {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  border: 1px solid #ccc;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination .active {
+  background: #d9e1dc;
+  font-weight: bold;
+}
