@@ -175,6 +175,26 @@ const About = () => {
         </div>
       </div>
 
+      <div style={{ display: "flex", marginBottom: "40px" }}>
+        <div style={{ flex: 2, paddingRight: "20px" }}>
+          <h3>Video Editor</h3>
+          <p>
+            Summary about Video Editing...Lorem ipsum dolor sit amet consectetur
+            adipiscing elit. Consectetur adipiscing elit quisque faucibus ex
+            sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
+            Placerat in id cursus mi pretium tellus duis. Pretium tellus duis
+            convallis tempus leo eu aenean.
+          </p>
+        </div>
+        <div style={{ flex: 1 }}>
+          <img
+            src={art1}
+            alt="Art"
+            style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
+          />
+        </div>
+      </div>
+
       {/* Add Ballet, Programming, Exchange sections similarly */}
     </div>
   );

@@ -1,8 +1,8 @@
 :root {
-  --soft-pink: #f5c7bd;
-  --soft-gray: #d9e1dc;
+  --soft-pink: rgb(245, 199, 189);
+  --soft-gray: rgb(217, 225, 220);
   --soft-peach: #f9e0ca;
-  --soft-cream: #f2ede5;
+  --soft-cream: rgb(242, 237, 229);
 }
 
 body {

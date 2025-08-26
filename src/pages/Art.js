@@ -10,8 +10,10 @@ const Art = () => {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2 className="fade-in">My Art Journey</h2>
+      <h2 className="fade-in">My Art Portfolio</h2>
       <ArtSlider images={images} />
+
+      <h2 className="fade-in">Early Art</h2>
     </div>
   );
 };

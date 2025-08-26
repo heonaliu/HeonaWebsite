@@ -1,0 +1,103 @@
+.art-slider {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #fdfdfd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.art-slide-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.art-slide {
+  min-width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.art-slide img {
+  max-width: 80%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 15px;
+  display: block;
+}
+
+/* Add fade/slide animation via opacity & transform */
+.art-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 1;
+}
+
+.art-slide.inactive {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 0;
+}
+
+.art-note {
+  margin-top: 10px;
+  font-size: 14px;
+  font-style: italic;
+  color: #444;
+  text-align: center;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(245, 199, 189);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(232, 151, 133, 0.941);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+/* Dots */
+.dots {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #f5c7bd; /* matches your theme */
+}
