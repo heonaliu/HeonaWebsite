@@ -15,7 +15,13 @@ const About = () => {
       <div style={{ display: "flex", marginBottom: "40px" }}>
         <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Digital Art</h3>
-          <p>Summary about your digital art here...</p>
+          <p>
+            Summary about your digital art here...Lorem ipsum dolor sit amet
+            consectetur adipiscing elit. Consectetur adipiscing elit quisque
+            faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat
+            in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus
+            duis convallis tempus leo eu aenean.
+          </p>
         </div>
         <div style={{ flex: 1 }}>
           <img
@@ -34,7 +40,13 @@ const About = () => {
       <div style={{ display: "flex", marginBottom: "40px" }}>
         <div style={{ flex: 1, paddingRight: "20px" }}>
           <h3>Youtube</h3>
-          <p>Summary about Youtube...</p>
+          <p>
+            Summary about Youtube...Lorem ipsum dolor sit amet consectetur
+            adipiscing elit. Consectetur adipiscing elit quisque faucibus ex
+            sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
+            Placerat in id cursus mi pretium tellus duis. Pretium tellus duis
+            convallis tempus leo eu aenean.
+          </p>
         </div>
         <div style={{ flex: 1 }} className="youtube-short-container">
           <iframe
@@ -50,7 +62,13 @@ const About = () => {
       <div style={{ display: "flex", marginBottom: "40px" }}>
         <div style={{ flex: 1, paddingRight: "20px" }}>
           <h3>Piano</h3>
-          <p>Summary about piano...</p>
+          <p>
+            Summary about piano..Lorem ipsum dolor sit amet consectetur
+            adipiscing elit. Consectetur adipiscing elit quisque faucibus ex
+            sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
+            Placerat in id cursus mi pretium tellus duis. Pretium tellus duis
+            convallis tempus leo eu aenean..
+          </p>
         </div>
         <div style={{ flex: 1 }}>
           <video width="100%" controls src={pianoVideo}></video>
@@ -60,7 +78,13 @@ const About = () => {
       <div style={{ display: "flex", marginBottom: "40px" }}>
         <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Exchange Student</h3>
-          <p>Summary about China Exchange...</p>
+          <p>
+            Summary about China Exchange..Lorem ipsum dolor sit amet consectetur
+            adipiscing elit. Consectetur adipiscing elit quisque faucibus ex
+            sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
+            Placerat in id cursus mi pretium tellus duis. Pretium tellus duis
+            convallis tempus leo eu aenean..
+          </p>
         </div>
         <div style={{ flex: 1 }}>
           <img
@@ -74,7 +98,13 @@ const About = () => {
       <div style={{ display: "flex", marginBottom: "40px" }}>
         <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Badminton Player</h3>
-          <p>Summary about China Exchange...</p>
+          <p>
+            Summary about Badminton...Lorem ipsum dolor sit amet consectetur
+            adipiscing elit. Consectetur adipiscing elit quisque faucibus ex
+            sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
+            Placerat in id cursus mi pretium tellus duis. Pretium tellus duis
+            convallis tempus leo eu aenean.
+          </p>
         </div>
         <div style={{ flex: 1 }}>
           <img
@@ -88,7 +118,13 @@ const About = () => {
       <div style={{ display: "flex", marginBottom: "40px" }}>
         <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Ballet Dancer</h3>
-          <p>Summary about Ballet</p>
+          <p>
+            Summary about Ballet Lorem ipsum dolor sit amet consectetur
+            adipiscing elit. Consectetur adipiscing elit quisque faucibus ex
+            sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
+            Placerat in id cursus mi pretium tellus duis. Pretium tellus duis
+            convallis tempus leo eu aenean.
+          </p>
         </div>
         <div style={{ flex: 1 }}>
           <img
@@ -102,7 +138,13 @@ const About = () => {
       <div style={{ display: "flex", marginBottom: "40px" }}>
         <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Programmer</h3>
-          <p>Summary about Programming...</p>
+          <p>
+            Summary about Programming...Lorem ipsum dolor sit amet consectetur
+            adipiscing elit. Consectetur adipiscing elit quisque faucibus ex
+            sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
+            Placerat in id cursus mi pretium tellus duis. Pretium tellus duis
+            convallis tempus leo eu aenean.
+          </p>
         </div>
         <div style={{ flex: 1 }}>
           <img
@@ -116,7 +158,13 @@ const About = () => {
       <div style={{ display: "flex", marginBottom: "40px" }}>
         <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Graphic Designer</h3>
-          <p>Summary about Programming...</p>
+          <p>
+            Summary about Graph Design...Lorem ipsum dolor sit amet consectetur
+            adipiscing elit. Consectetur adipiscing elit quisque faucibus ex
+            sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
+            Placerat in id cursus mi pretium tellus duis. Pretium tellus duis
+            convallis tempus leo eu aenean.
+          </p>
         </div>
         <div style={{ flex: 1 }}>
           <img

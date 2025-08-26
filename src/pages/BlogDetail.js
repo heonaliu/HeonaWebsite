@@ -65,10 +65,10 @@ const BlogDetail = ({ blogs }) => {
           <video src={blog.video} controls className="detail-video" />
         )}
 
-        <p>{blog.content}</p>
+        <p style={{ whiteSpace: "pre-line" }}>{blog.content}</p>
 
         <button className="like-btn" onClick={toggleLike}>
-          {liked ? "❤️ Liked" : "🤍 Like"}
+          {liked ? "❤️" : "🤍"}
         </button>
 
         <div ref={commentsRef} className="comments-section">

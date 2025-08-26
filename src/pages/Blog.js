@@ -6,7 +6,7 @@ const Blog = () => {
     {
       title: "My First Blog",
       summary: "Short intro about this blog.",
-      content: "Full blog content goes here.",
+      content: `Full blog content goes here.`,
       date: "August 25, 2025",
     },
     {
