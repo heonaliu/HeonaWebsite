@@ -3,6 +3,7 @@
   width: 80%;
   max-width: 800px;
   margin: 40px auto;
+  padding-top: 20px; /* adds extra space at top of slider */
   overflow: hidden;
   border-radius: 15px;
   background: #fdfdfd;
