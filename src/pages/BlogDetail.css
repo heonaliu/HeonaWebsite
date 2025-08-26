@@ -130,12 +130,13 @@
 }
 
 .comment-form button {
-  background-color: #d9e1dc;
+  background-color: #f5c7bd; /* new aesthetic color */
   border: none;
   padding: 0.7rem;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.2s ease;
+  color: white; /* optional for better contrast */
 }
 
 .comment-form button:hover {

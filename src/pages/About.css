@@ -1,0 +1,21 @@
+/* Larger and centered headings */
+.fade-in h1,
+.fade-in h2,
+.fade-in h3 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 3rem; /* increase size */
+  font-weight: bold; /* make it bolder */
+  color: #333; /* optional: softer black */
+}
+
+/* Fix YouTube short aspect ratio to be vertical */
+.youtube-short-container iframe {
+  width: 100%;
+  max-width: 300px; /* narrower so it feels vertical */
+  height: 500px; /* taller for Shorts */
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto; /* center it horizontally */
+}

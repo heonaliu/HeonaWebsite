@@ -83,3 +83,7 @@ body {
 .hover-enlarge:hover {
   transform: scale(1.03);
 }
+
+* {
+  font-family: "Poppins", sans-serif;
+}

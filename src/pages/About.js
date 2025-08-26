@@ -1,5 +1,6 @@
 import React from "react";
 import art1 from "../assets/images/art1.png";
+import "./About.css";
 // import art2 from "../assets/images/art2.png";
 
 const About = () => {
@@ -35,12 +36,11 @@ const About = () => {
           <h3>Youtube</h3>
           <p>Summary about Youtube...</p>
         </div>
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1 }} className="youtube-short-container">
           <iframe
-            width="100%"
-            height="200"
             src="https://www.youtube.com/embed/wnrlNctF3ws"
-            title="YouTube video"
+            title="YouTube Short"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             frameBorder="0"
             allowFullScreen
           ></iframe>
@@ -58,7 +58,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 1, paddingRight: "20px" }}>
+        <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Exchange Student</h3>
           <p>Summary about China Exchange...</p>
         </div>
@@ -72,7 +72,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 1, paddingRight: "20px" }}>
+        <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Badminton Player</h3>
           <p>Summary about China Exchange...</p>
         </div>
@@ -86,7 +86,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 1, paddingRight: "20px" }}>
+        <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Ballet Dancer</h3>
           <p>Summary about Ballet</p>
         </div>
@@ -100,7 +100,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 1, paddingRight: "20px" }}>
+        <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Programmer</h3>
           <p>Summary about Programming...</p>
         </div>
@@ -114,7 +114,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 1, paddingRight: "20px" }}>
+        <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Graphic Designer</h3>
           <p>Summary about Programming...</p>
         </div>
