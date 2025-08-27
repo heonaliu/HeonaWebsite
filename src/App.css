@@ -88,3 +88,12 @@ body {
 * {
   font-family: "Poppins", sans-serif;
 }
+
+img {
+  display: block; /* prevents inline spacing issues */
+  margin: 0 auto; /* centers images horizontally */
+  width: 100%; /* responsive */
+  height: auto; /* maintain aspect ratio */
+  max-width: 500px; /* cap maximum size */
+  border-radius: 15px; /* if you want rounded corners */
+}

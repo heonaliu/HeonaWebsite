@@ -1,7 +1,14 @@
 import React from "react";
-import art1 from "../assets/images/art1.png";
+import art1 from "../assets/images/art3.png";
 import "./About.css";
 // import art2 from "../assets/images/art2.png";
+import exchange from "../assets/images/exchange-group.png";
+import badminton from "../assets/images/badminton.png";
+import ballet from "../assets/images/ballet.png";
+import art2 from "../assets/images/art2.png";
+import graphic1 from "../assets/images/graphic.png";
+import graphic2 from "../assets/images/graphic2.png";
+import exchange2 from "../assets/images/exchange2.png";
 
 //AboutVideo
 import AboutVideo from "../components/AboutVideo";
@@ -26,17 +33,10 @@ const About = () => {
             duis convallis tempus leo eu aenean.
           </p>
         </div>
-        <div style={{ flex: 1 }}>
-          <img
-            src={art1}
-            alt="Art"
-            style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
-          />
-          {/* <img
-            src={art2}
-            alt="Art"
-            style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
-          /> */}
+
+        <div className="digital-art-images">
+          <img src={art1} alt="Art" className="digital-art-img" />
+          <img src={art2} alt="Art" className="digital-art-img" />
         </div>
       </div>
 
@@ -63,18 +63,42 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 1, paddingRight: "20px" }}>
+        <div style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Piano</h3>
           <p>
-            Summary about piano..Lorem ipsum dolor sit amet consectetur
-            adipiscing elit. Consectetur adipiscing elit quisque faucibus ex
-            sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
-            Placerat in id cursus mi pretium tellus duis. Pretium tellus duis
-            convallis tempus leo eu aenean..
+            Summary about your YouTube work here... Lorem ipsum dolor sit amet
+            consectetur adipiscing elit. Consectetur adipiscing elit quisque
+            faucibus ex sapien vitae.
           </p>
         </div>
+
         <div style={{ flex: 1 }}>
-          <video width="100%" controls src={pianoVideo}></video>
+          <div
+            style={{
+              position: "relative",
+              paddingBottom: "56.25%",
+              height: 0,
+              overflow: "hidden",
+              borderRadius: "15px",
+              marginTop: "10px",
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/MI-CjcbU4pE"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                borderRadius: "15px",
+              }}
+            ></iframe>
+          </div>
         </div>
       </div>
 
@@ -89,12 +113,9 @@ const About = () => {
             convallis tempus leo eu aenean..
           </p>
         </div>
-        <div style={{ flex: 1 }}>
-          <img
-            src={art1}
-            alt="Art"
-            style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
-          />
+        <div className="image-group">
+          <img src={exchange} alt="Design" className="responsive-img" />
+          <img src={exchange2} alt="Design" className="responsive-img" />
         </div>
       </div>
 
@@ -111,7 +132,7 @@ const About = () => {
         </div>
         <div style={{ flex: 1 }}>
           <img
-            src={art1}
+            src={badminton}
             alt="Art"
             style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
           />
@@ -131,7 +152,7 @@ const About = () => {
         </div>
         <div style={{ flex: 1 }}>
           <img
-            src={art1}
+            src={ballet}
             alt="Art"
             style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
           />
@@ -160,21 +181,17 @@ const About = () => {
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
         <div style={{ flex: 2, paddingRight: "20px" }}>
-          <h3>Graphic Designer</h3>
+          <h3>Graphic Design</h3>
           <p>
-            Summary about Graph Design...Lorem ipsum dolor sit amet consectetur
-            adipiscing elit. Consectetur adipiscing elit quisque faucibus ex
-            sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
-            Placerat in id cursus mi pretium tellus duis. Pretium tellus duis
-            convallis tempus leo eu aenean.
+            Summary about your graphic design here...Lorem ipsum dolor sit amet
+            consectetur adipiscing elit. Consectetur adipiscing elit quisque
+            faucibus ex sapien vitae...
           </p>
         </div>
-        <div style={{ flex: 1 }}>
-          <img
-            src={art1}
-            alt="Art"
-            style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
-          />
+
+        <div className="image-group">
+          <img src={graphic1} alt="Design" className="responsive-img" />
+          <img src={graphic2} alt="Design" className="responsive-img" />
         </div>
       </div>
 
@@ -190,8 +207,6 @@ const About = () => {
           </p>
         </div>
       </div>
-
-      {/* Add Ballet, Programming, Exchange sections similarly */}
     </div>
   );
 };

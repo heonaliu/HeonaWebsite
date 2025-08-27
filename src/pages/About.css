@@ -19,3 +19,69 @@
   display: block;
   margin: 0 auto; /* center it horizontally */
 }
+
+.stacked-images {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 10px; /* space between the two images */
+  max-height: 100%; /* fit within the original single image space */
+}
+
+.stacked-images img {
+  width: 100%; /* full width of the container */
+  height: calc(50% - 5px); /* split height evenly, subtract half the gap */
+  object-fit: cover; /* ensures the image fills the box without distortion */
+  border-radius: 10px; /* optional, match the style of other images */
+}
+
+.digital-art-images {
+  display: flex;
+  flex-direction: column; /* default: stacked */
+  align-items: center;
+  gap: 15px;
+}
+
+/* Base image styling */
+.digital-art-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 15px;
+  height: auto;
+}
+
+/* On wider screens, go side by side */
+@media (min-width: 1000px) {
+  .digital-art-images {
+    flex-direction: row; /* side by side */
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .digital-art-img {
+    width: 45%; /* let them sit side by side */
+    max-width: 350px; /* they can grow a little on big screens */
+  }
+}
+
+/* Default (small screens): stack images */
+.image-group {
+  display: flex;
+  flex-direction: column; /* always stacked */
+  align-items: center;
+  gap: 15px;
+}
+
+.responsive-img {
+  width: 100%;
+  max-width: 350px; /* cap size so it doesn’t get huge */
+  border-radius: 15px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* On bigger screens: allow a little growth, but keep a ceiling */
+@media (min-width: 900px) {
+  .responsive-img {
+    max-width: 450px; /* grows a bit larger, but not endless */
+  }
+}
