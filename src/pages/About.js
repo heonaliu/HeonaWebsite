@@ -2,6 +2,10 @@ import React from "react";
 import art1 from "../assets/images/art1.png";
 import "./About.css";
 // import art2 from "../assets/images/art2.png";
+import video from "../assets/videos/videoEditor.mp4";
+
+//AboutVideo
+import AboutVideo from "../components/AboutVideo";
 
 const About = () => {
   //   const digitalArtVideo = "https://www.w3schools.com/html/mov_bbb.mp4";
@@ -187,11 +191,7 @@ const About = () => {
           </p>
         </div>
         <div style={{ flex: 1 }}>
-          <img
-            src={art1}
-            alt="Art"
-            style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
-          />
+          <AboutVideo src={video} />
         </div>
       </div>
 
