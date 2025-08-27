@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import "./AboutVideo.css";
-import video from "../assets/videos/videoEditor.mp4";
 
 const AboutVideo = () => {
   const [muted, setMuted] = useState(true);
@@ -31,14 +30,14 @@ const AboutVideo = () => {
   // Video element for portal
   const videoContent = (
     <div className="expanded-video-container" onClick={toggleExpand}>
-      <video
+      {/* <video
         ref={videoRef}
         className="about-video expanded-video"
         src={video}
         autoPlay
         muted={muted}
         onClick={(e) => e.stopPropagation()}
-      />
+      /> */}
       <div className="expanded-controls">
         <button onClick={toggleMute}>{muted ? "Unmute" : "Mute"}</button>
         <button onClick={toggleExpand}>Minimize</button>
@@ -50,7 +49,7 @@ const AboutVideo = () => {
     <div className="video-wrapper">
       {!expanded && (
         <>
-          <video
+          {/* <video
             ref={videoRef}
             src={video}
             style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
@@ -58,7 +57,7 @@ const AboutVideo = () => {
             autoPlay
             playsInline
             onClick={toggleExpand}
-          />
+          /> */}
           <div className="video-controls">
             <button onClick={toggleMute}>{muted ? "Unmute" : "Mute"}</button>
           </div>
