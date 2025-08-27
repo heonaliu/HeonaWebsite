@@ -62,7 +62,10 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
+        <div
+          className="about-text piano-video-wrapper"
+          style={{ flex: 2, paddingRight: "20px" }}
+        >
           <h3>Piano</h3>
           <p>
             Summary about your YouTube work here... Lorem ipsum dolor sit amet
@@ -75,27 +78,26 @@ const About = () => {
           <div
             style={{
               position: "relative",
-              paddingBottom: "56.25%",
-              height: 0,
-              overflow: "hidden",
-              borderRadius: "15px",
+              width: "100%", // match container width
+              paddingTop: "56.25%", // 16:9 aspect ratio (9/16 = 0.5625)
               marginTop: "10px",
+              borderRadius: "15px",
+              overflow: "hidden",
             }}
           >
             <iframe
               src="https://www.youtube.com/embed/MI-CjcbU4pE"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+              title="Piano Video"
               style={{
                 position: "absolute",
                 top: 0,
                 left: 0,
                 width: "100%",
                 height: "100%",
-                borderRadius: "15px",
+                border: "0",
               }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             ></iframe>
           </div>
         </div>
