@@ -15,7 +15,6 @@ import AboutVideo from "../components/AboutVideo";
 
 const About = () => {
   //   const digitalArtVideo = "https://www.w3schools.com/html/mov_bbb.mp4";
-  const pianoVideo = "https://www.w3schools.com/html/movie.mp4";
 
   return (
     <div
@@ -23,7 +22,7 @@ const About = () => {
       style={{ display: "flex", flexDirection: "column", padding: "20px" }}
     >
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 2, paddingRight: "20px" }}>
+        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Digital Art</h3>
           <p>
             Summary about your digital art here...Lorem ipsum dolor sit amet
@@ -41,7 +40,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 1, paddingRight: "20px" }}>
+        <div className="about-text" style={{ flex: 1, paddingRight: "20px" }}>
           <h3>Youtube</h3>
           <p>
             Summary about Youtube...Lorem ipsum dolor sit amet consectetur
@@ -63,7 +62,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 2, paddingRight: "20px" }}>
+        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Piano</h3>
           <p>
             Summary about your YouTube work here... Lorem ipsum dolor sit amet
@@ -103,7 +102,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 2, paddingRight: "20px" }}>
+        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Exchange Student</h3>
           <p>
             Summary about China Exchange..Lorem ipsum dolor sit amet consectetur
@@ -120,7 +119,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 2, paddingRight: "20px" }}>
+        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Badminton Player</h3>
           <p>
             Summary about Badminton...Lorem ipsum dolor sit amet consectetur
@@ -140,7 +139,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 2, paddingRight: "20px" }}>
+        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Ballet Dancer</h3>
           <p>
             Summary about Ballet Lorem ipsum dolor sit amet consectetur
@@ -160,7 +159,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 2, paddingRight: "20px" }}>
+        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Programmer</h3>
           <p>
             Summary about Programming...Lorem ipsum dolor sit amet consectetur
@@ -180,7 +179,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 2, paddingRight: "20px" }}>
+        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Graphic Design</h3>
           <p>
             Summary about your graphic design here...Lorem ipsum dolor sit amet
@@ -196,7 +195,7 @@ const About = () => {
       </div>
 
       <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div style={{ flex: 2, paddingRight: "20px" }}>
+        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Video Editor</h3>
           <p>
             Summary about Video Editing...Lorem ipsum dolor sit amet consectetur

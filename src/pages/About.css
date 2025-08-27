@@ -85,3 +85,13 @@
     max-width: 450px; /* grows a bit larger, but not endless */
   }
 }
+
+.about-text p {
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.6;
+}
+
+.about-text h3 {
+  font-size: clamp(20px, 3vw, 32px);
+  margin-bottom: 12px;
+}
