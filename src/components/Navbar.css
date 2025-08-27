@@ -1,0 +1,59 @@
+.navbar {
+  display: flex;
+  align-items: center; /* vertical center everything */
+  justify-content: space-between; /* left items vs right icons */
+  padding: 0 20px;
+  height: 70px; /* slightly taller to accommodate larger text */
+  background-color: #f9e0ca;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center; /* vertically center channel + links */
+  gap: 40px; /* space between channel icon and links */
+}
+
+.channel-icon {
+  height: 50px;
+  width: 50px; /* ensure width matches height for perfect circle */
+  border-radius: 50%;
+  display: block;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px; /* space between each link */
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #404040;
+  font-weight: 600;
+  font-size: 18px; /* larger text */
+  letter-spacing: 1px; /* slightly more spacing between letters */
+  transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+  color: white;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* space between right icons */
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1); /* slightly enlarge on hover */
+}

@@ -1,58 +1,87 @@
-.art-slider {
-  position: relative;
-  width: 80%;
-  max-width: 800px;
+.art-slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1000px;
   margin: 40px auto;
-  padding-top: 20px; /* adds extra space at top of slider */
+  gap: 40px;
+  padding-top: 20px;
+}
+
+/* Left column text */
+.art-text {
+  flex: 0 0 40%;
+  max-width: 400px;
+}
+
+.art-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.art-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Right column slider */
+.art-slider {
+  flex: 0 0 60%;
+  max-width: 600px;
+  position: relative;
   overflow: hidden;
   border-radius: 15px;
   background: #fdfdfd;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Slide container */
 .art-slide-container {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  width: 100%;
 }
 
+/* Each slide */
 .art-slide {
-  min-width: 100%;
+  flex: 0 0 100%;
+  height: auto;
+  position: relative;
+  display: block; /* stack image and note vertically */
+  padding: 10px;
+  box-sizing: border-box;
   text-align: center;
+}
+
+/* Image wrapper ensures rounded corners for all images */
+.image-wrapper {
+  width: 100%;
+  height: 400px; /* consistent height */
+  border-radius: 15px;
+  overflow: hidden; /* 🔹 this ensures any image inside gets clipped */
+  background: #fafafa;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .art-slide img {
-  max-width: 80%;
-  max-height: 400px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  border-radius: 15px;
   display: block;
+  border-radius: 15px;
+  /* DO NOT add border-radius here */
 }
 
-/* Add fade/slide animation via opacity & transform */
-.art-slide.active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  z-index: 1;
-}
-
-.art-slide.inactive {
-  opacity: 0;
-  transform: translateX(100%);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  z-index: 0;
-}
-
+/* Notes below image */
 .art-note {
   margin-top: 10px;
   font-size: 14px;
   font-style: italic;
   color: #444;
-  text-align: center;
 }
 
 /* Arrows */
@@ -60,18 +89,23 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgb(245, 199, 189);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   border: none;
-  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   font-size: 20px;
-  border-radius: 50%;
   transition: background 0.3s;
+  z-index: 10;
 }
 
 .arrow:hover {
-  background: rgba(232, 151, 133, 0.941);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .arrow.left {
@@ -95,10 +129,21 @@
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.3s ease;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .dot.active {
-  background-color: #f5c7bd; /* matches your theme */
+  background-color: #f5c7bd;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }

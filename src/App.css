@@ -3,13 +3,14 @@
   --soft-gray: rgb(217, 225, 220);
   --soft-peach: #f9e0ca;
   --soft-cream: rgb(242, 237, 229);
+  --dark-grey: #404040;
 }
 
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
   background-color: var(--soft-cream);
-  color: #333;
+  color: var(--dark-grey);
   overflow-x: hidden;
 }
 
@@ -25,7 +26,7 @@ body {
 .nav-link {
   margin: 0 15px;
   text-decoration: none;
-  color: #333;
+  color: var(--dark-grey);
   font-weight: bold;
   transition: color 0.3s;
 }

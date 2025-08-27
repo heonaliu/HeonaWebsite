@@ -3,52 +3,53 @@ import { Link } from "react-router-dom";
 import channelIcon from "../assets/images/channelIcon.png";
 import youtubeLogo from "../assets/images/youtube.png";
 import githubLogo from "../assets/images/github.png";
+import spotifyLogo from "../assets/images/spotify.png"; // add your image in assets
+import instagramLogo from "../assets/images/instagram.png"; // add your image in assets
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <nav
-      className="navbar fade-in"
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <Link to="/">
-        <img
-          src={channelIcon}
-          alt="Home"
-          style={{ height: "50px", borderRadius: "50%" }}
-        />
-      </Link>
-      <div>
-        <Link className="nav-link" to="/about">
-          About
+    <nav className="navbar fade-in">
+      <div className="navbar-left">
+        <Link to="/">
+          <img src={channelIcon} alt="Home" className="channel-icon" />
         </Link>
-        <Link className="nav-link" to="/projects">
-          Projects
-        </Link>
-        <Link className="nav-link" to="/art">
-          Art
-        </Link>
-        <Link className="nav-link" to="/blog">
-          Blog
-        </Link>
+        <ul className="navbar-links">
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/projects">Projects</Link>
+          </li>
+          <li>
+            <Link to="/art">Art</Link>
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+        </ul>
       </div>
-      <div>
+
+      <div className="navbar-right">
         <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
-          <img
-            src={youtubeLogo}
-            alt="YouTube"
-            style={{ height: "30px", margin: "0 5px" }}
-          />
+          <img src={youtubeLogo} alt="YouTube" className="icon" />
         </a>
         <a href="https://github.com/" target="_blank" rel="noreferrer">
-          <img
-            src={githubLogo}
-            alt="GitHub"
-            style={{ height: "30px", margin: "0 5px" }}
-          />
+          <img src={githubLogo} alt="GitHub" className="icon" />
+        </a>
+        <a
+          href="https://open.spotify.com/user/31bjy62od5bm6oqisg3kh2xnaduq"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={spotifyLogo} alt="Spotify" className="icon" />
+        </a>
+        <a
+          href="https://www.instagram.com/sleepymeilows/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={instagramLogo} alt="Instagram" className="icon" />
         </a>
       </div>
     </nav>
