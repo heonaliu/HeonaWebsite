@@ -190,9 +190,6 @@ const About = () => {
             convallis tempus leo eu aenean.
           </p>
         </div>
-        <div style={{ flex: 1 }}>
-          <AboutVideo src={video} />
-        </div>
       </div>
 
       {/* Add Ballet, Programming, Exchange sections similarly */}
