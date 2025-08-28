@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./BlogDetail.css";
 import BlogComments from "../components/BlogComments";
+import likedIcon from "../assets/images/liked.png";
+import notLikedIcon from "../assets/images/notliked.png";
 
 const COMMENTS_PER_PAGE = 12;
 
@@ -11,7 +13,15 @@ const BlogDetail = ({ blogs }) => {
   const storageKey = `comments_blog_${id}`;
   const blog = blogs.find((b) => b.id === parseInt(id));
 
-  const [liked, setLiked] = useState(false);
+  const storageLikeKey = `liked_blog_${id}`;
+  const storageLikeCountKey = `like_count_blog_${id}`;
+
+  const [liked, setLiked] = useState(() => {
+    return JSON.parse(localStorage.getItem(storageLikeKey)) || false;
+  });
+  const [likeCount, setLikeCount] = useState(() => {
+    return JSON.parse(localStorage.getItem(storageLikeCountKey)) || 0;
+  });
   const [comments, setComments] = useState(() => {
     return JSON.parse(localStorage.getItem(storageKey)) || [];
   });
@@ -39,7 +49,14 @@ const BlogDetail = ({ blogs }) => {
   }, []);
 
   const toggleLike = () => {
-    setLiked(!liked);
+    const newLiked = !liked;
+    setLiked(newLiked);
+
+    const newCount = newLiked ? likeCount + 1 : likeCount - 1;
+    setLikeCount(newCount);
+
+    localStorage.setItem(storageLikeKey, JSON.stringify(newLiked));
+    localStorage.setItem(storageLikeCountKey, newCount);
   };
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -107,8 +124,25 @@ const BlogDetail = ({ blogs }) => {
 
         <p style={{ whiteSpace: "pre-line" }}>{blog.content}</p>
 
-        <button className="like-btn" onClick={toggleLike}>
-          {liked ? "❤️" : "🤍"}
+        <button
+          className="like-btn"
+          onClick={toggleLike}
+          style={{
+            padding: "12px 20px", // increase button padding
+            fontSize: "18px", // optional if you have text
+            display: "flex",
+            alignItems: "center",
+            gap: "10px", // space between heart and number
+          }}
+        >
+          <img
+            src={liked ? likedIcon : notLikedIcon}
+            alt={liked ? "Liked" : "Not liked"}
+            style={{ width: "30px", height: "30px" }} // bigger icon
+          />
+          <span style={{ fontSize: "20px", fontWeight: "bold" }}>
+            {likeCount}
+          </span>
         </button>
 
         <div ref={commentsRef} className="comments-section">

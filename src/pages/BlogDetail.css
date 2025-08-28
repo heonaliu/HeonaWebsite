@@ -102,12 +102,13 @@
 
 /* Like button */
 .like-btn {
-  background: none;
+  background: #f5c7bd;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
   transition: transform 0.2s ease;
   margin-bottom: 1rem;
+  padding: 0;
 }
 .like-btn:hover {
   transform: scale(1.1);
