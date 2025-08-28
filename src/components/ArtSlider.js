@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./ArtSlider.css";
 
 const ArtSlider = ({ artworks, description }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [expandedImage, setExpandedImage] = useState(null); // 🔹 new state
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? artworks.length - 1 : prev - 1));
@@ -28,7 +29,10 @@ const ArtSlider = ({ artworks, description }) => {
         >
           {artworks.map((art, index) => (
             <div className="art-slide" key={index}>
-              <div className="image-wrapper">
+              <div
+                className="image-wrapper hover-zoom"
+                onClick={() => setExpandedImage(art.image)} // 🔹 click to expand
+              >
                 <img src={art.image} alt={`Artwork ${index + 1}`} />
               </div>
               <p className="art-note">{art.note}</p>
@@ -55,6 +59,27 @@ const ArtSlider = ({ artworks, description }) => {
           ))}
         </div>
       </div>
+
+      {/* 🔹 Expanded modal */}
+      {expandedImage && (
+        <div
+          className="expanded-modal"
+          onClick={() => setExpandedImage(null)} // close on backdrop click
+        >
+          <div
+            className="expanded-content"
+            onClick={(e) => e.stopPropagation()} // prevent accidental close
+          >
+            <button
+              className="close-btn"
+              onClick={() => setExpandedImage(null)}
+            >
+              ×
+            </button>
+            <img src={expandedImage} alt="Expanded artwork" />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
