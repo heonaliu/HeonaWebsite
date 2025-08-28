@@ -9,12 +9,24 @@ import {
   setDoc,
   updateDoc,
   arrayUnion,
+  arrayRemove,
   increment,
   onSnapshot,
 } from "firebase/firestore";
 import { db } from "../firebase";
 
 const COMMENTS_PER_PAGE = 12;
+
+const getUserId = () => {
+  let id = localStorage.getItem("userId");
+  if (!id) {
+    id = crypto.randomUUID(); // modern browser supported
+    localStorage.setItem("userId", id);
+  }
+  return id;
+};
+
+const userId = getUserId();
 
 const BlogDetail = ({ blogs }) => {
   const { id } = useParams();
@@ -34,21 +46,21 @@ const BlogDetail = ({ blogs }) => {
 
   // Load likes and comments from Firestore
   useEffect(() => {
-    const unsubscribe = onSnapshot(blogRef, (docSnap) => {
+    const fetchBlogData = async () => {
+      const docSnap = await getDoc(blogRef);
       if (docSnap.exists()) {
         const data = docSnap.data();
         setLikeCount(data.likeCount || 0);
         setComments(data.comments || []);
+        setLiked(data.likedUsers?.includes(userId) || false);
       } else {
-        // If doc doesn't exist, create it
-        setDoc(blogRef, { likeCount: 0, comments: [] });
+        await setDoc(blogRef, { likeCount: 0, comments: [], likedUsers: [] });
         setLikeCount(0);
         setComments([]);
+        setLiked(false);
       }
-    });
-
-    // Cleanup the listener when the component unmounts
-    return () => unsubscribe();
+    };
+    fetchBlogData();
   }, [blogRef]);
 
   // Toggle like in Firestore
@@ -56,12 +68,19 @@ const BlogDetail = ({ blogs }) => {
     const newLiked = !liked;
     setLiked(newLiked);
 
+    const newCount = newLiked ? likeCount + 1 : likeCount - 1;
+    setLikeCount(newCount);
+
     if (newLiked) {
-      setLikeCount((prev) => prev + 1);
-      await updateDoc(blogRef, { likeCount: increment(1) });
+      await updateDoc(blogRef, {
+        likeCount: newCount,
+        likedUsers: arrayUnion(userId),
+      });
     } else {
-      setLikeCount((prev) => (prev > 0 ? prev - 1 : 0));
-      await updateDoc(blogRef, { likeCount: increment(-1) });
+      await updateDoc(blogRef, {
+        likeCount: newCount,
+        likedUsers: arrayRemove(userId),
+      });
     }
   };
 
