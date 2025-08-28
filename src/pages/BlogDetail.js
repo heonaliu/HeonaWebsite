@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./BlogDetail.css";
-import BlogComments from "../components/BlogComments";
 import likedIcon from "../assets/images/liked.png";
 import notLikedIcon from "../assets/images/notliked.png";
 
@@ -40,13 +39,6 @@ const BlogDetail = ({ blogs }) => {
   useEffect(() => {
     localStorage.setItem(storageKey, JSON.stringify(comments));
   }, [comments, storageKey]);
-
-  // Scroll to comments if hash present
-  useEffect(() => {
-    if (window.location.hash === "#comments" && commentsRef.current) {
-      commentsRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, []);
 
   const toggleLike = () => {
     const newLiked = !liked;

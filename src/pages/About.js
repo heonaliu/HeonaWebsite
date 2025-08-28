@@ -13,9 +13,6 @@ import programming from "../assets/images/programming.png";
 
 import { Link } from "react-router-dom";
 
-//AboutVideo
-import AboutVideo from "../components/AboutVideo";
-
 const About = () => {
   //   const digitalArtVideo = "https://www.w3schools.com/html/mov_bbb.mp4";
 
