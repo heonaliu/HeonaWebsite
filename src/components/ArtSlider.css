@@ -73,6 +73,16 @@
   /* DO NOT add border-radius here, wrapper handles it */
 }
 
+.art-slide img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.art-slide img:hover {
+  transform: scale(1.05); /* Slight zoom */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Subtle shadow effect */
+}
+
 /* Notes below image */
 .art-note {
   margin-top: 10px;
@@ -153,7 +163,7 @@
 .expanded-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: #f9e0ca93;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -181,6 +191,8 @@
   display: block;
   margin: auto;
   object-fit: contain; /* ensures no cropping */
+  transition: none;
+  cursor: default;
 }
 
 /* Close button in TOP-RIGHT of the image */
@@ -191,7 +203,7 @@
   font-size: 1.8rem;
   font-weight: bold;
   color: white;
-  background: rgba(0, 0, 0, 0.6);
+  background: #f39782bb;
   border: none;
   border-radius: 50%;
   padding: 4px 10px;
@@ -200,6 +212,6 @@
   transition: background 0.2s;
 }
 .close-btn:hover {
-  background: rgba(255, 255, 255, 0.8);
-  color: black;
+  background: rgba(255, 255, 255, 0.674);
+  color: #f39782;
 }
