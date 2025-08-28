@@ -2,21 +2,30 @@ import React from "react";
 import ProjectCard from "../components/ProjectCard";
 import project1 from "../assets/images/project1.png";
 import project2 from "../assets/images/project2.png";
+import project3 from "../assets/images/project3.png";
 import "./Projects.css";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Scratch Project 1",
-      description: "MBTI Game",
+      title: "MBTI Quiz",
+      description: "MBTI Game - Inspired by cute and minimalistic applications",
       link: "https://scratch.mit.edu/projects/686789338/",
       image: project1,
     },
     {
-      title: "Scratch Project 2",
-      description: "Another creative project.",
+      title: "Chinese Dimsum: FPCA",
+      description:
+        "This is a Front Page Cover Application using Scratch Vector Art",
       link: "https://scratch.mit.edu/projects/706358508/",
       image: project2,
+    },
+    {
+      title: "Scrolling Platformer Game: Through The Internet",
+      description:
+        "Followed Griffpatch Scrolling Platformer Tutorial on YouTube",
+      link: "https://scratch.mit.edu/projects/466941627/",
+      image: project3,
     },
   ];
 
@@ -35,9 +44,9 @@ const Projects = () => {
         Since I was 7, my dad introduced me to Scratch! Inspired by projects, I
         spent the majority of my time on there making projects. Throughout my
         time on Scratch, I hopped around different accounts. I have a net total
-        of around 1600+ followers overall. Since 6th grade, my dad introduced me
-        to Python.{" "}
-      </p>{" "}
+        of around 1600+ followers overall. When I was in 6th grade, my dad
+        introduced me to Python.
+      </p>
       <p>
         Due to the pandemic, my family made the decision to go homeschooled for
         7th grade. During this time, I followed course, and getting exposed to
@@ -49,6 +58,12 @@ const Projects = () => {
       <p>
         In 8th grade, I went back to in-person school and took a pause in my
         development in programming, which I realize was a big mistake.
+      </p>
+      <p>
+        The Scratch Projects below are ones from 2022 (7th Grade). This was also
+        a time where I was developing an increasing passion for digital art.
+        These projects best feature me combining my art skills with programming
+        skills.
       </p>
       <div
         style={{
