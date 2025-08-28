@@ -22,6 +22,18 @@ const About = () => {
       className="fade-in"
       style={{ display: "flex", flexDirection: "column", padding: "20px" }}
     >
+      <h2
+        style={{
+          textAlign: "center",
+          fontSize: "3rem",
+          fontWeight: "700",
+          marginBottom: "60px", // space between header and first section
+          width: "100%",
+        }}
+      >
+        About Me
+      </h2>
+
       <div style={{ display: "flex", marginBottom: "40px" }}>
         <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Digital Art</h3>
