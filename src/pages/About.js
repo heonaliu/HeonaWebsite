@@ -67,11 +67,28 @@ const About = () => {
         <div className="about-text" style={{ flex: 1, paddingRight: "20px" }}>
           <h3>Youtube</h3>
           <p>
-            Summary about Youtube...Lorem ipsum dolor sit amet consectetur
-            adipiscing elit. Consectetur adipiscing elit quisque faucibus ex
-            sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
-            Placerat in id cursus mi pretium tellus duis. Pretium tellus duis
-            convallis tempus leo eu aenean.
+            I officially joined YouTube in January of 2023 on another YouTube
+            channel that I don't use currently. On my old channel I had 1.28k
+            subscribers and a pretty successful video reaching 30k views.
+          </p>
+          <p>
+            My curent YouTube channel{" "}
+            <a
+              href="https://www.youtube.com/@sleepymeilows"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="youtube-link"
+            >
+              @sleepymeilows
+            </a>{" "}
+            currently has about 2.82k subscribers and a net total of over 3.2
+            million views. I usually post art trends, piano content and fun
+            snippets of my life. I love using YouTube to showcase my digital
+            artworks!
+          </p>
+          <p>
+            This YouTube short on the right is an art trend I did in June 2025,
+            which blew up, reaching over 2.4 million views.
           </p>
         </div>
         <div style={{ flex: 1 }} className="youtube-short-container">
@@ -92,9 +109,21 @@ const About = () => {
         >
           <h3>Piano</h3>
           <p>
-            Summary about your YouTube work here... Lorem ipsum dolor sit amet
-            consectetur adipiscing elit. Consectetur adipiscing elit quisque
-            faucibus ex sapien vitae.
+            I've been musically active and playing piano since I was 8 years old
+            with a piano teacher. I have been learning piano for quite a long
+            while now. I really enjoyed my time learning new pieces. As school
+            is getting busier, I've made the hard decision to discontinue
+            lessons but will forever stay musical in my heart. Learning piano
+            has allowed me to develop a sense of rhythm, a love for classical
+            music and has been a helpful tool in my ballet classes.
+          </p>
+
+          <p>
+            {" "}
+            The video on the right is me playing Tarentella by A. Pieczonka
+            (Spring 2023) at a New England Piano Teacher's Association (NEPTA)
+            Recital. This is a juried recital, meaning piano teachers pick a
+            select few of their students to perform at this recital.{" "}
           </p>
         </div>
 
