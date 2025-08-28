@@ -63,8 +63,41 @@ const Art = () => {
       <ArtSlider
         artworks={recentArt}
         description={{
-          title: "Recent Art Works",
-          content: "This is some descriptive text for the first slider.",
+          title: "Overview",
+          content: (
+            <>
+              <p>
+                The artworks on the slideshow are some of my (recently drawn)
+                pieces that I am proud of. Click the pieces to expand!
+              </p>
+              <p>
+                Since 2020, I've grown fond of digital art. I've always loved
+                how digital art (and art in general) has allowed me to expand my
+                creativity and find my inner peace.
+              </p>
+              <p>
+                My digital art journey pushed me far beyond what I initially
+                thought I was capable of. This is especially evident in the
+                projects created in my Graphics class. I was able to take mere
+                pixels and turn it into something I can see and hold in my
+                everyday life like a T-shirt, notepad or pin.
+              </p>
+              <p>
+                <a
+                  href="https://artfight.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#66b7dc", textDecoration: "underline" }}
+                >
+                  Artfight
+                </a>
+                : Part of the joy of digital art is being able to see other
+                artists draw your character. The many different takes and styles
+                I've seen my character drawn in feels so rewarding, knowing I've
+                come so far. Enjoy my pieces!
+              </p>
+            </>
+          ),
         }}
       />
 
@@ -74,7 +107,7 @@ const Art = () => {
         description={{
           title: "The Beginnings",
           content:
-            "During the pandemic was when I invested in my first iPad! It was definitely a big purchase for an 11 year old. I got my first stylus and started diving face first into the digital art world. Even after watching countless YouTube tutorials and having my style switch on a daily basis, I -- still to this day -- haven't found a style that I stick with.\n\nWhile I was still developing my art style, I did a lot of art contests and art trades on a children's coding site (Scratch). When I was on Scratch I went by an alias, hence the different name in watermarks. \n\n As my love in digital art grew, so did the friendships I made in the art community. The constant learning and growth is what kept me dedicated and passionate to this hobby. As a young artist, I managed to gain experience doing small commissions in exchange for Discord Nitro. The feeling of finishing an art piece, knowing I'll be bringing someone a smile is what I love the most about this journey. I continue to utilize my talent and skills to bring that joy to my friends and family.",
+            "During the pandemic was when I invested in my first iPad! It was definitely a big purchase for an 11 year old. I got my first stylus and started diving face first into the digital art world. Even after watching countless YouTube tutorials, doing countless studies and having my style switch on a daily basis, I -- still to this day -- haven't found a style that I stick with.\n\nWhile I was still developing my art style, I did a lot of art contests and art trades on a children's coding site (Scratch). When I was on Scratch I went by an alias, hence the different name in watermarks. \n\n As my love in digital art grew, so did the support and friendships I gained in the art community. The constant learning and growth is what kept me dedicated and passionate to this hobby. As a young artist, I managed to gain experience doing small commissions in exchange for Discord Nitro. The feeling of finishing an art piece, knowing I'll be bringing someone a smile is what I love the most about this journey. I continue to utilize my talent and skills to bring that joy to my friends and family.",
         }}
       />
     </div>
