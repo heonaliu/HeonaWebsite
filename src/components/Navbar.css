@@ -5,6 +5,8 @@
   padding: 0 20px;
   height: 70px; /* slightly taller to accommodate larger text */
   background-color: #f9e0ca;
+  position: relative; /* needed for absolute positioning of menu in mobile */
+  z-index: 10000;
 }
 
 .navbar-left {
@@ -61,4 +63,44 @@
 
 .icon:hover {
   transform: scale(1.1); /* slightly enlarge on hover */
+}
+
+/* Hamburger menu */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 70px; /* below navbar */
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: #f9e0ca;
+    display: none;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+    z-index: 9999;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links li {
+    padding: 15px 0;
+  }
+
+  .navbar-links li a {
+    font-size: 20px; /* slightly larger on mobile */
+  }
 }

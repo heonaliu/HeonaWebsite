@@ -1,32 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import channelIcon from "../assets/images/channelIcon.png";
 import youtubeLogo from "../assets/images/youtube.png";
 import githubLogo from "../assets/images/github.png";
-import spotifyLogo from "../assets/images/spotify.png"; // add your image in assets
-import instagramLogo from "../assets/images/instagram.png"; // add your image in assets
+import spotifyLogo from "../assets/images/spotify.png";
+import instagramLogo from "../assets/images/instagram.png";
 import linkedinLogo from "../assets/images/linkedin.png";
+import { FaBars, FaTimes } from "react-icons/fa"; // hamburger icons
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
     <nav className="navbar fade-in">
       <div className="navbar-left">
         <Link to="/">
           <img src={channelIcon} alt="Home" className="channel-icon" />
         </Link>
-        <ul className="navbar-links">
+
+        {/* Hamburger button */}
+        <div className="menu-icon" onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+
+        <ul className={menuOpen ? "navbar-links active" : "navbar-links"}>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>
+              About
+            </Link>
           </li>
           <li>
-            <Link to="/projects">Projects</Link>
+            <Link to="/projects" onClick={() => setMenuOpen(false)}>
+              Projects
+            </Link>
           </li>
           <li>
-            <Link to="/art">Art</Link>
+            <Link to="/art" onClick={() => setMenuOpen(false)}>
+              Art
+            </Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog" onClick={() => setMenuOpen(false)}>
+              Blog
+            </Link>
           </li>
         </ul>
       </div>
