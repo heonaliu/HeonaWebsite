@@ -1,19 +1,35 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "./BlogDetail.css"; // Make sure this file exists
+import "./BlogDetail.css";
+import BlogComments from "../components/BlogComments";
 
 const COMMENTS_PER_PAGE = 12;
 
 const BlogDetail = ({ blogs }) => {
   const { id } = useParams();
+  // localStorage key for this blog
+  const storageKey = `comments_blog_${id}`;
   const blog = blogs.find((b) => b.id === parseInt(id));
 
   const [liked, setLiked] = useState(false);
-  const [comments, setComments] = useState(blog?.comments || []);
+  const [comments, setComments] = useState(() => {
+    return JSON.parse(localStorage.getItem(storageKey)) || [];
+  });
   const [newComment, setNewComment] = useState({ name: "", text: "" });
   const [successMessage, setSuccessMessage] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const commentsRef = useRef(null);
+
+  // Load comments from localStorage on mount
+  useEffect(() => {
+    const savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    setComments(savedComments);
+  }, [storageKey]);
+
+  // Save comments to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+  }, [comments, storageKey]);
 
   // Scroll to comments if hash present
   useEffect(() => {
@@ -41,6 +57,15 @@ const BlogDetail = ({ blogs }) => {
     setNewComment({ name: "", text: "" });
     setSuccessMessage("Comment posted successfully! Thank you!");
     setTimeout(() => setSuccessMessage(""), 3000);
+  };
+
+  // Delete comment (only visible in dev mode)
+  const deleteComment = (index) => {
+    if (process.env.NODE_ENV === "development") {
+      const updated = [...comments];
+      updated.splice(index, 1);
+      setComments(updated);
+    }
   };
 
   // Pagination
@@ -87,6 +112,14 @@ const BlogDetail = ({ blogs }) => {
                 <small>
                   — {c.name || "Anonymous"} on {c.date}
                 </small>
+                {process.env.NODE_ENV === "development" && (
+                  <button
+                    className="delete-comment-btn"
+                    onClick={() => deleteComment(i)}
+                  >
+                    Delete
+                  </button>
+                )}
               </div>
             ))
           )}
