@@ -16,7 +16,8 @@ const blogsData = [
     image: blog2,
     date: "August 28, 2025",
     summary: "After several days of vibing and programming...",
-    content: "Full content of the second blog goes here...",
+    content:
+      "After many many hours of debugging, asking questions, and implementing ideas. I finally finished my own website. This was one of my goals this summer and I am actually impressed and extremely proud of myself for pushing myself far beyond what I thought I could. I truly never believed I could go this far. So looking at this website made me smile because I managed to push down my mental barriers.\n\n Just because of this one idea, if I hadn't taken the initiative to start, I wouldn't have known I could do so much. Thank you so much for checking out my website.",
   },
 ];
 
