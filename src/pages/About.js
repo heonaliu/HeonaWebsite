@@ -37,20 +37,20 @@ const About = () => {
         <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Digital Art</h3>
           <p>
-            Since 2020, I was a passionate digital artist. My digital art
+            Since 2020, I have been a passionate digital artist. My digital art
             journey has allowed me to pay attention to small but critical
-            details while also being one of the best examples of growth
-            throughout my life. I love to draw and participate in art contests
-            in my free time. I love to incorporate my artistic skills in
-            projects, school, for friends, and even the development of this
+            details and serves as one of the best examples of growth in my life.
+            I love to draw and participate in art contests in my free time. I
+            also enjoy incorporating my artistic skills into projects,
+            schoolwork, helping friends, and even in the development of this
             website.
           </p>
           <p>
-            You can read more and see more of my artworks in the{" "}
+            You can read more and see additional artworks in the{" "}
             <Link to="/art" className="link">
               Art
             </Link>{" "}
-            tab
+            tab.
           </p>
         </div>
 
@@ -64,12 +64,12 @@ const About = () => {
         <div className="about-text" style={{ flex: 1, paddingRight: "20px" }}>
           <h3>Youtube</h3>
           <p>
-            I officially joined YouTube in January of 2023 on another YouTube
-            channel that I don't use currently. On my old channel I had 1.28k
-            subscribers and a pretty successful video reaching 30k views.
+            I officially joined YouTube in January 2023 on another channel that
+            I no longer use. On my old channel, I had 1.28k subscribers and a
+            fairly successful video that reached 30k views.
           </p>
           <p>
-            My curent YouTube channel{" "}
+            My current YouTube channel,{" "}
             <a
               href="https://www.youtube.com/@sleepymeilows"
               target="_blank"
@@ -77,15 +77,15 @@ const About = () => {
               className="link"
             >
               @sleepymeilows
-            </a>{" "}
-            currently has about 2.82k subscribers and a net total of over 3.2
-            million views. I usually post art trends, piano content and fun
-            snippets of my life. I love using YouTube to showcase my digital
-            artworks!
+            </a>
+            {", "}
+            has about 2.82k subscribers and a total of over 3.2 million views. I
+            usually post art trends, piano content, and fun snippets of my life.
+            I love using YouTube to showcase my digital artworks!
           </p>
           <p>
-            This YouTube short on the right is an art trend I did in June 2025,
-            which blew up, reaching over 2.4 million views.
+            The YouTube Short on the right is an art trend I created in June
+            2025, which went viral, reaching over 2.4 million views.
           </p>
         </div>
         <div style={{ flex: 1 }} className="youtube-short-container">
@@ -106,21 +106,22 @@ const About = () => {
         >
           <h3>Piano</h3>
           <p>
-            I've been musically active and playing piano since I was 8 years old
-            with a piano teacher. I have been learning piano for quite a long
-            while now. I really enjoyed my time learning new pieces. As school
-            is getting busier, I've made the hard decision to discontinue
-            lessons but will forever stay musical in my heart. Learning piano
-            has allowed me to develop a sense of rhythm, a love for classical
-            music and has been a helpful tool in my ballet classes.
+            I've been musically active and playing the piano since I was 8 years
+            old, studying with a piano teacher. I have been learning piano for
+            quite a long time and have really enjoyed learning new pieces. As
+            school has become busier, I made the difficult decision to
+            discontinue lessons, but I will forever stay musical at heart.
+            Learning piano has allowed me to develop a sense of rhythm, a love
+            for classical music, and has been a helpful tool in my ballet
+            classes.
           </p>
 
           <p>
             {" "}
-            The video on the right is me playing Tarentella by A. Pieczonka
+            The video on the right shows me playing Tarentella by A. Pieczonka
             (Spring 2023) at a New England Piano Teacher's Association (NEPTA)
-            Recital. This is a juried recital, meaning piano teachers pick a
-            select few of their students to perform at this recital.{" "}
+            recital. This is a juried recital, meaning piano teachers select
+            only a few students to perform.{" "}
           </p>
         </div>
 
@@ -157,22 +158,23 @@ const About = () => {
         <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Exchange Student</h3>
           <p>
-            A fun fact! I was an exchange student! Our high school exchange
-            program is one of the oldest student/teacher exchange program
-            between United States and China. schools. After a 4 year hiatus, the
-            program was resumed. My exchange group was the first post-pandemic
-            group to restart the program.
+            A fun fact: I was an exchange student! Our high school exchange
+            program is one of the oldest student-teacher exchange programs
+            between the United States and China. After a four-year hiatus, the
+            program was resumed, and my exchange group was the first
+            post-pandemic group to restart it.
           </p>
           <p>
-            From January to May (2025), me and 5 other students witnessed and
-            had a full immersive experience in a whole new culture, language,
-            and life. It was a life changing time for me.
+            From January to May 2025, five other students and I had a fully
+            immersive experience in a completely new culture, language, and way
+            of life. It was a life-changing time for me.
           </p>
           <p>
-            We got to experience what being students in a school in China was
-            like. We met so many different people and traversed China, embracing
-            each obstacle and overcoming them. This program has taught me a lot
-            about flexibility, time-managment, and observing my enviornment.
+            We got to experience what it was like to be students in the Beijing
+            Jingshan School in China. We met many different people and traveled
+            across China, embracing challenges and overcoming obstacles. This
+            program taught me a lot about flexibility, time management, and
+            observing my environment.
           </p>
         </div>
         <div className="image-group">
@@ -185,21 +187,21 @@ const About = () => {
         <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Badminton Player</h3>
           <p>
-            Inspired by my dad and friends, I picked up badminton in freshman
-            year of high school. During freshman year, I wasn't so serious about
-            playing but it was the first time I picked up a badminton racket.
+            Inspired by my dad and friends, I picked up badminton in my freshman
+            year of high school. During that year, I wasn't very serious about
+            playing, but it was the first time I ever held a badminton racket.
           </p>
           <p>
-            Now I wished someone introduced me about this sport sooner! In
-            sophomore year of high school, I play it actively while
-            participating in competitions with my team. My favorite part is
-            being with my friends and also keeping myself in shape.
+            Now, I wish someone had introduced me to this sport sooner! By my
+            sophomore year, I was playing actively and participating in
+            competitions with my team. My favorite part is spending time with
+            friends while staying in shape.
           </p>
           <p>
-            During my time in the exchange, I continued to develop my badminton
-            skills by playing along side teachers and mentors after lunch nearly
+            During my exchange program, I continued to develop my badminton
+            skills by playing alongside teachers and mentors after lunch nearly
             every day. In my free time, I enjoy watching badminton videos and
-            tips on how I can improve my game.
+            learning tips to improve my game.
           </p>
         </div>
         <div style={{ flex: 1 }}>
@@ -215,14 +217,14 @@ const About = () => {
         <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Ballet Dancer</h3>
           <p>
-            Ballet is another major part of my life. I've been dancing for
-            almost 10 years. It has taught me to work with a team while also
-            keeping in shape. I have done ballet and pointe work for about 3
-            years before I had to take a step back due to Achilles Tendon
+            Ballet is another major part of my life. I’ve been dancing for
+            almost 10 years. It has taught me teamwork, discipline, and how to
+            stay in shape. I practiced ballet and pointe work for about three
+            years before needing to take a step back due to Achilles tendon
             discomfort.
           </p>
           <p>
-            In the picture on the right, I was a model for a family friend{" "}
+            In the picture on the right, I was a model for a family friend,{" "}
             <a
               href="https://www.shuklee.com/about"
               target="_blank"
@@ -230,8 +232,10 @@ const About = () => {
               className="link"
             >
               Shuk Susan Lee
-            </a>{" "}
-            who is an amazing pastel artist.
+            </a>
+            {", "}
+            who is an amazing pastel artist and has won many awards for her
+            artworks.
           </p>
         </div>
         <div style={{ flex: 1 }}>
@@ -247,12 +251,12 @@ const About = () => {
         <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Programmer</h3>
           <p>
-            Since young, I was an avid Scratch kid. I loved to make projects and
-            grow in a supportive community. Diving into scratch is what ignited
-            my ideas to combine my digital art skills and programming ability.
-            Currently, I take the same love for growth by teaching younger kids
-            the fun of coding and seeing their creations become a reality. Read
-            more about my projects in the{" "}
+            Since I was young, I have been an avid Scratch user. I loved
+            creating projects and growing within a supportive community. Diving
+            into Scratch sparked my interest in combining digital art with
+            programming. Today, I carry that same passion by teaching younger
+            kids the fun of coding and helping them bring their creations to
+            life. You can read more about my projects in the{" "}
             <Link className="link" to={"/projects"}>
               Projects
             </Link>{" "}
@@ -272,18 +276,18 @@ const About = () => {
         <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Graphic Design</h3>
           <p>
-            Building on my digital art journey, graphics design was what would
-            take everything to the next level. I always loved the idea of
-            putting my art on a T-shirt or notepad, it was something I could
-            use.{" "}
+            Building on my digital art journey, graphic design was the next step
+            to take everything to the next level. I have always loved the idea
+            of putting my art on a T-shirt or notepad—something practical that I
+            could use.{" "}
           </p>{" "}
           <p>
-            After finally getting into the Graphics Communications course in my
-            high school! I was overjoyed! Although it was a semester course, I
-            always went above and beyond in projects and worked on them before
-            and after school hours. This class was definitely one of the
-            highlights of my sophomore year, and I will continue to build
-            creations in the graphics workshop.
+            When I finally got into the Graphics Communications course at my
+            high school, I was overjoyed! Although it was only a semester-long
+            course, I consistently went above and beyond in my projects, often
+            working on them before and after school. This class was definitely
+            one of the highlights of my sophomore year, and I look forward to
+            continuing to create in the graphics workshop.
           </p>
         </div>
 
