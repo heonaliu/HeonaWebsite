@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./ArtSlider.css";
 
-const ArtSlider = ({ artworks }) => {
+const ArtSlider = ({ artworks, description }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fadeIn, setFadeIn] = useState(false); // fade-in trigger
-  const currentArt = artworks[currentIndex];
-
-  useEffect(() => {
-    setFadeIn(true);
-  }, []); // triggers once on mount
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? artworks.length - 1 : prev - 1));
@@ -19,11 +13,11 @@ const ArtSlider = ({ artworks }) => {
   };
 
   return (
-    <div className={`art-slider-wrapper ${fadeIn ? "fade-in" : ""}`}>
-      {/* Left side text */}
+    <div className="art-slider-wrapper">
+      {/* Left side descriptive text */}
       <div className="art-text">
-        <h3>{currentArt.title}</h3>
-        <p>{currentArt.note}</p>
+        <h3>{description.title}</h3>
+        <p>{description.content}</p>
       </div>
 
       {/* Right side slider */}

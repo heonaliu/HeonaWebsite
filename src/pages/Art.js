@@ -58,10 +58,22 @@ const Art = () => {
   return (
     <div style={{ paddingTop: "40px" }}>
       <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Recent Art</h2>
-      <ArtSlider artworks={recentArt} />
+      <ArtSlider
+        artworks={recentArt}
+        description={{
+          title: "Recent Art Works",
+          content: "This is some descriptive text for the first slider.",
+        }}
+      />
 
       <h2 style={{ textAlign: "center", margin: "40px 0 20px" }}>Early Art</h2>
-      <ArtSlider artworks={earlyArt} />
+      <ArtSlider
+        artworks={earlyArt}
+        description={{
+          title: "Second Slider Title",
+          content: "This is a different text for the second slider.",
+        }}
+      />
     </div>
   );
 };
