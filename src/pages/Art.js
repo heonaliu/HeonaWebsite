@@ -28,9 +28,12 @@ import early12 from "../assets/images/earlyArt/earlyArt12.png";
 
 const Art = () => {
   const recentArt = [
-    { image: art1, note: "Art Trade — drawn in 2023" },
-    { image: art2, note: "Character Art — completed in 2022" },
-    { image: art3, note: "Competition Entry — (2021)" },
+    {
+      image: art1,
+      note: "Art Trade: Character - Hua Cheng (天官赐福) — (2024)",
+    },
+    { image: art2, note: "Character Art: Rendering Experiment — (2025)" },
+    { image: art3, note: "Competition Entry For @sakuraopal* — (2025)" },
     { image: art4, note: "Eye studies - July 2024" },
     { image: art5, note: "Image Study - July 2024" },
     { image: art6, note: "Competition Entry - July 2024" },
@@ -95,6 +98,13 @@ const Art = () => {
                 artists draw your character. The many different takes and styles
                 I've seen my character drawn in feels so rewarding, knowing I've
                 come so far. Enjoy my pieces!
+              </p>
+              <p>
+                *Competition Entry for @sakuraopal -- (2025): This took a
+                totalling of 21 hours. That is by far the longest amount of time
+                I've spent on a piece.The Disneyland castle each part was
+                rendered and colored by me, using a picture (that I took) of the
+                Hong Kong Disneyland castle.
               </p>
             </>
           ),
