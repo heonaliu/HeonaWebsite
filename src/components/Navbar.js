@@ -5,6 +5,7 @@ import youtubeLogo from "../assets/images/youtube.png";
 import githubLogo from "../assets/images/github.png";
 import spotifyLogo from "../assets/images/spotify.png"; // add your image in assets
 import instagramLogo from "../assets/images/instagram.png"; // add your image in assets
+import linkedinLogo from "../assets/images/linkedin.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -31,11 +32,22 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-right">
-        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.youtube.com/@sleepymeilows"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={youtubeLogo} alt="YouTube" className="icon" />
         </a>
-        <a href="https://github.com/" target="_blank" rel="noreferrer">
+        <a href="https://github.com/heonaliu" target="_blank" rel="noreferrer">
           <img src={githubLogo} alt="GitHub" className="icon" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/heona-liu-3ab1b237a/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={linkedinLogo} alt="GitHub" className="icon" />
         </a>
         <a
           href="https://open.spotify.com/user/31bjy62od5bm6oqisg3kh2xnaduq"

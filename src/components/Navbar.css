@@ -18,6 +18,11 @@
   width: 50px; /* ensure width matches height for perfect circle */
   border-radius: 50%;
   display: block;
+  transition: transform 0.3s ease; /* smooth growth */
+}
+
+.channel-icon:hover {
+  transform: scale(1.1); /* grows 20% on hover */
 }
 
 .navbar-links {
