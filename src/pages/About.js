@@ -9,6 +9,7 @@ import art2 from "../assets/images/art2.png";
 import graphic1 from "../assets/images/graphic.png";
 import graphic2 from "../assets/images/graphic2.png";
 import exchange2 from "../assets/images/exchange2.png";
+import programming from "../assets/images/programming.png";
 
 //AboutVideo
 import AboutVideo from "../components/AboutVideo";
@@ -173,7 +174,7 @@ const About = () => {
         </div>
         <div style={{ flex: 1 }}>
           <img
-            src={art1}
+            src={programming}
             alt="Art"
             style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
           />
