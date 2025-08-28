@@ -9,12 +9,14 @@ import Art from "./pages/Art";
 import BlogList from "./pages/BlogList";
 import BlogDetail from "./pages/BlogDetail";
 import blogsData from "./data/blogs";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <div className="content">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

@@ -96,13 +96,13 @@
   margin-bottom: 12px;
 }
 
-.art-link {
+.link {
   color: #7ac1d6; /* your chosen color */
   text-decoration: none; /* remove underline by default */
   transition: color 0.3s ease; /* smooth hover transition */
 }
 
-.art-link:hover {
+.link:hover {
   color: #4ca4be; /* slightly darker/lighter on hover */
   text-decoration: underline; /* optional underline on hover */
 }
