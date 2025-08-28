@@ -1,0 +1,32 @@
+.scrolling-text-wrapper {
+  height: 3rem; /* adjust based on font size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.scrolling-text-item {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scrolling-text-item.enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.scrolling-text-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scrolling-text-item.exit {
+  opacity: 0;
+  transform: translateY(-20px);
+}
