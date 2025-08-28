@@ -3,57 +3,90 @@ import { useParams } from "react-router-dom";
 import "./BlogDetail.css";
 import likedIcon from "../assets/images/liked.png";
 import notLikedIcon from "../assets/images/notliked.png";
+import {
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+  arrayUnion,
+  increment,
+  onSnapshot,
+} from "firebase/firestore";
+import { db } from "../firebase";
 
 const COMMENTS_PER_PAGE = 12;
 
 const BlogDetail = ({ blogs }) => {
   const { id } = useParams();
-  // localStorage key for this blog
-  const storageKey = `comments_blog_${id}`;
   const blog = blogs.find((b) => b.id === parseInt(id));
 
-  const storageLikeKey = `liked_blog_${id}`;
-  const storageLikeCountKey = `like_count_blog_${id}`;
-
-  const [liked, setLiked] = useState(() => {
-    return JSON.parse(localStorage.getItem(storageLikeKey)) || false;
-  });
-  const [likeCount, setLikeCount] = useState(() => {
-    return JSON.parse(localStorage.getItem(storageLikeCountKey)) || 0;
-  });
-  const [comments, setComments] = useState(() => {
-    return JSON.parse(localStorage.getItem(storageKey)) || [];
-  });
+  const [liked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+  const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState({ name: "", text: "" });
   const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const commentsRef = useRef(null);
 
-  // Load comments from localStorage on mount
-  useEffect(() => {
-    const savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
-    setComments(savedComments);
-  }, [storageKey]);
+  // Firestore document reference for this blog
+  const blogRef = doc(db, "blogs", id);
 
-  // Save comments to localStorage whenever they change
+  // Load likes and comments from Firestore
   useEffect(() => {
-    localStorage.setItem(storageKey, JSON.stringify(comments));
-  }, [comments, storageKey]);
+    const unsubscribe = onSnapshot(blogRef, (docSnap) => {
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        setLikeCount(data.likeCount || 0);
+        setComments(data.comments || []);
+      } else {
+        // If doc doesn't exist, create it
+        setDoc(blogRef, { likeCount: 0, comments: [] });
+        setLikeCount(0);
+        setComments([]);
+      }
+    });
 
-  const toggleLike = () => {
+    // Cleanup the listener when the component unmounts
+    return () => unsubscribe();
+  }, [blogRef]);
+
+  // Toggle like in Firestore
+  const toggleLike = async () => {
     const newLiked = !liked;
     setLiked(newLiked);
 
-    const newCount = newLiked ? likeCount + 1 : likeCount - 1;
-    setLikeCount(newCount);
-
-    localStorage.setItem(storageLikeKey, JSON.stringify(newLiked));
-    localStorage.setItem(storageLikeCountKey, newCount);
+    if (newLiked) {
+      setLikeCount((prev) => prev + 1);
+      await updateDoc(blogRef, { likeCount: increment(1) });
+    } else {
+      setLikeCount((prev) => (prev > 0 ? prev - 1 : 0));
+      await updateDoc(blogRef, { likeCount: increment(-1) });
+    }
   };
 
-  const [errorMessage, setErrorMessage] = useState("");
+  const deleteComment = async (commentToDelete) => {
+    // Only the developer can delete manually
+    // You can add a simple check here if you want, e.g., a secret flag or localStorage check
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this comment?"
+    );
+    if (!confirmed) return;
 
-  const postComment = (e) => {
+    try {
+      // Remove the comment from Firestore
+      await updateDoc(blogRef, {
+        comments: comments.filter((c) => c !== commentToDelete),
+      });
+      setSuccessMessage("Comment deleted successfully!");
+      setTimeout(() => setSuccessMessage(""), 3000);
+    } catch (err) {
+      console.error("Error deleting comment:", err);
+      setErrorMessage("Failed to delete comment.");
+    }
+  };
+
+  const postComment = async (e) => {
     e.preventDefault();
 
     const errors = [];
@@ -77,19 +110,14 @@ const BlogDetail = ({ blogs }) => {
       year: "numeric",
     });
 
-    setComments([{ ...newComment, date: formattedDate }, ...comments]);
+    const commentToAdd = { ...newComment, date: formattedDate };
+    setComments([commentToAdd, ...comments]);
     setNewComment({ name: "", text: "" });
     setSuccessMessage("Comment posted successfully! Thank you!");
     setTimeout(() => setSuccessMessage(""), 3000);
-  };
 
-  // Delete comment (only visible in dev mode)
-  const deleteComment = (index) => {
-    if (process.env.NODE_ENV === "development") {
-      const updated = [...comments];
-      updated.splice(index, 1);
-      setComments(updated);
-    }
+    // Add comment to Firestore
+    await updateDoc(blogRef, { comments: arrayUnion(commentToAdd) });
   };
 
   // Pagination
@@ -120,17 +148,17 @@ const BlogDetail = ({ blogs }) => {
           className="like-btn"
           onClick={toggleLike}
           style={{
-            padding: "12px 20px", // increase button padding
-            fontSize: "18px", // optional if you have text
+            padding: "12px 20px",
+            fontSize: "18px",
             display: "flex",
             alignItems: "center",
-            gap: "10px", // space between heart and number
+            gap: "10px",
           }}
         >
           <img
             src={liked ? likedIcon : notLikedIcon}
             alt={liked ? "Liked" : "Not liked"}
-            style={{ width: "30px", height: "30px" }} // bigger icon
+            style={{ width: "30px", height: "30px" }}
           />
           <span style={{ fontSize: "20px", fontWeight: "bold" }}>
             {likeCount}
@@ -169,14 +197,13 @@ const BlogDetail = ({ blogs }) => {
                 <small>
                   — {c.name || "Anonymous"} on {c.date}
                 </small>
-                {process.env.NODE_ENV === "development" && (
-                  <button
-                    className="delete-comment-btn"
-                    onClick={() => deleteComment(i)}
-                  >
-                    Delete
-                  </button>
-                )}
+                {/* Only show delete button for you as the developer */}
+                <button
+                  className="delete-comment-btn"
+                  onClick={() => deleteComment(c)}
+                >
+                  Delete
+                </button>
               </div>
             ))
           )}
