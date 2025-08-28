@@ -42,9 +42,24 @@ const BlogDetail = ({ blogs }) => {
     setLiked(!liked);
   };
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const postComment = (e) => {
     e.preventDefault();
-    if (!newComment.text.trim()) return;
+
+    const errors = [];
+    if (!newComment.name.trim()) errors.push("Author can't be blank.");
+    if (!newComment.text.trim()) errors.push("Body can't be blank.");
+
+    if (errors.length > 0) {
+      setErrorMessage(
+        "Please correct the following errors:\n" + errors.join("\n")
+      );
+      setSuccessMessage(""); // hide success if there was an error
+      return;
+    }
+
+    setErrorMessage(""); // clear previous errors
 
     const today = new Date();
     const formattedDate = today.toLocaleDateString("en-US", {
@@ -103,6 +118,22 @@ const BlogDetail = ({ blogs }) => {
             <div className="success-msg">{successMessage}</div>
           )}
 
+          {errorMessage && (
+            <div
+              className="error-msg"
+              style={{
+                color: "#f15c5c",
+                background: "#f5c7bd",
+                padding: "10px",
+                marginBottom: "10px",
+                borderRadius: "5px",
+                whiteSpace: "pre-line",
+              }}
+            >
+              {errorMessage}
+            </div>
+          )}
+
           {currentComments.length === 0 ? (
             <p>No comments yet.</p>
           ) : (
@@ -146,7 +177,7 @@ const BlogDetail = ({ blogs }) => {
           <form onSubmit={postComment} className="comment-form">
             <input
               type="text"
-              placeholder="Your name (optional)"
+              placeholder="Your name"
               value={newComment.name}
               onChange={(e) =>
                 setNewComment({ ...newComment, name: e.target.value })
@@ -158,7 +189,6 @@ const BlogDetail = ({ blogs }) => {
               onChange={(e) =>
                 setNewComment({ ...newComment, text: e.target.value })
               }
-              required
             ></textarea>
             <button type="submit">Post Comment</button>
           </form>
