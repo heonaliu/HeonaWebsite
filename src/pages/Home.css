@@ -12,3 +12,27 @@
   padding-top: 50px;
   color: #404040;
 }
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+  padding: 20px;
+}
+
+.homepage-footer {
+  margin-top: auto; /* pushes footer to bottom */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #888888;
+}
+
+.homepage-footer a {
+  color: #61dafb; /* React blue */
+  text-decoration: none;
+}
+
+.homepage-footer a:hover {
+  text-decoration: underline;
+}
