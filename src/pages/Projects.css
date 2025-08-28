@@ -1,0 +1,9 @@
+.project-text p {
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.6;
+}
+
+.project-text h3 {
+  font-size: clamp(20px, 3vw, 32px);
+  margin-bottom: 12px;
+}
