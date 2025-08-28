@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 
+// Helper to check dev mode
+const isDev = process.env.NODE_ENV === "development";
+
 const BlogComments = ({ blogId }) => {
+  const storageKey = `blogComments_${blogId}`;
   const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState("");
+  const [newComment, setNewComment] = useState({ name: "", text: "" });
+  const [successMessage, setSuccessMessage] = useState("");
 
-  const storageKey = `comments-${blogId}`;
-
-  // Load comments from localStorage on mount
+  // Load comments from localStorage
   useEffect(() => {
-    const savedComments = JSON.parse(localStorage.getItem(storageKey)) || [];
-    setComments(savedComments);
+    const stored = localStorage.getItem(storageKey);
+    if (stored) setComments(JSON.parse(stored));
   }, [storageKey]);
 
   // Save comments to localStorage whenever they change
@@ -17,70 +20,72 @@ const BlogComments = ({ blogId }) => {
     localStorage.setItem(storageKey, JSON.stringify(comments));
   }, [comments, storageKey]);
 
-  const handleAddComment = () => {
-    if (newComment.trim() === "") return;
+  const postComment = (e) => {
+    e.preventDefault();
+    if (!newComment.text.trim()) return;
 
-    setComments((prev) => [
-      ...prev,
-      { id: Date.now(), text: newComment.trim() },
-    ]);
-    setNewComment("");
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString("en-US", {
+      month: "long",
+      day: "2-digit",
+      year: "numeric",
+    });
+
+    const commentToAdd = { ...newComment, date: formattedDate };
+    setComments([commentToAdd, ...comments]);
+    setNewComment({ name: "", text: "" });
+    setSuccessMessage("Comment posted successfully!");
+    setTimeout(() => setSuccessMessage(""), 3000);
   };
 
-  const handleDeleteComment = (id) => {
-    setComments((prev) => prev.filter((c) => c.id !== id));
+  const deleteComment = (index) => {
+    const updated = comments.filter((_, i) => i !== index);
+    setComments(updated);
   };
 
   return (
-    <div style={{ marginTop: "30px" }}>
+    <div className="comments-section">
       <h3>Comments</h3>
-      <div style={{ marginBottom: "10px" }}>
-        <textarea
-          value={newComment}
-          onChange={(e) => setNewComment(e.target.value)}
-          placeholder="Write a comment..."
-          rows={3}
-          style={{ width: "100%", padding: "8px", fontSize: "16px" }}
-        />
-        <button onClick={handleAddComment} style={{ marginTop: "5px" }}>
-          Add Comment
-        </button>
-      </div>
 
-      <div>
-        {comments.map((c) => (
-          <div
-            key={c.id}
-            style={{
-              padding: "8px",
-              border: "1px solid #ccc",
-              marginBottom: "5px",
-              borderRadius: "5px",
-              position: "relative",
-            }}
-          >
-            {c.text}
-            {process.env.NODE_ENV === "development" && (
-              <button
-                onClick={() => handleDeleteComment(c.id)}
-                style={{
-                  position: "absolute",
-                  top: "5px",
-                  right: "5px",
-                  background: "red",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "3px",
-                  padding: "2px 6px",
-                  cursor: "pointer",
-                }}
-              >
-                X
+      {successMessage && <div className="success-msg">{successMessage}</div>}
+
+      {comments.length === 0 ? (
+        <p>No comments yet.</p>
+      ) : (
+        comments.map((c, i) => (
+          <div key={i} className="comment">
+            <p>{c.text}</p>
+            <small>
+              — {c.name || "Anonymous"} on {c.date}
+            </small>
+            {isDev && (
+              <button className="delete-btn" onClick={() => deleteComment(i)}>
+                Delete
               </button>
             )}
           </div>
-        ))}
-      </div>
+        ))
+      )}
+
+      <form onSubmit={postComment} className="comment-form">
+        <input
+          type="text"
+          placeholder="Your name (optional)"
+          value={newComment.name}
+          onChange={(e) =>
+            setNewComment({ ...newComment, name: e.target.value })
+          }
+        />
+        <textarea
+          placeholder="Write your comment..."
+          value={newComment.text}
+          onChange={(e) =>
+            setNewComment({ ...newComment, text: e.target.value })
+          }
+          required
+        />
+        <button type="submit">Post Comment</button>
+      </form>
     </div>
   );
 };
