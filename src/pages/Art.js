@@ -57,7 +57,9 @@ const Art = () => {
 
   return (
     <div style={{ paddingTop: "40px" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Recent Art</h2>
+      <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+        Art Portfolio
+      </h2>
       <ArtSlider
         artworks={recentArt}
         description={{
@@ -70,8 +72,9 @@ const Art = () => {
       <ArtSlider
         artworks={earlyArt}
         description={{
-          title: "Second Slider Title",
-          content: "This is a different text for the second slider.",
+          title: "The Beginnings",
+          content:
+            "During the pandemic was when I invested in my first iPad! It was definitely a big purchase for an 11 year old. I got my first stylus and started diving face first into the digital art world. Even after watching countless YouTube tutorials and having my style switch on a daily basis, I -- still to this day -- haven't found a style that I stick with.\n\nWhile I was still developing my art style, I did a lot of art contests and art trades on a children's coding site (Scratch). When I was on Scratch I went by an alias, hence the difference in watermark. \n\n As my love in digital art grew, so did the friends that I made in the art community.",
         }}
       />
     </div>
