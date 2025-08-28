@@ -8,20 +8,20 @@ import "./Projects.css";
 const Projects = () => {
   const projects = [
     {
-      title: "MBTI Quiz",
+      title: "MBTI Quiz (2023)",
       description: "MBTI Game - Inspired by cute and minimalistic applications",
       link: "https://scratch.mit.edu/projects/686789338/",
       image: project1,
     },
     {
-      title: "Chinese Dimsum: FPCA",
+      title: "Chinese Dimsum: FPCA (2023)",
       description:
         "This is a Front Page Cover Application using Scratch Vector Art",
       link: "https://scratch.mit.edu/projects/706358508/",
       image: project2,
     },
     {
-      title: "Scrolling Platformer Game: Through The Internet",
+      title: "Scrolling Platformer Game: Through The Internet (2020)",
       description:
         "Followed Griffpatch Scrolling Platformer Tutorial on YouTube",
       link: "https://scratch.mit.edu/projects/466941627/",

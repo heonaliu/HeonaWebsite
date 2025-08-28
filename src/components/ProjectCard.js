@@ -1,19 +1,21 @@
 import React from "react";
+import "./ProjectCard.css";
 
-const ProjectCard = ({ title, description, link, image }) => {
+const ProjectCard = ({ title, description, image, link }) => {
   return (
-    <div className="card fade-in" style={{ width: "300px" }}>
-      <img
-        src={image}
-        alt={title}
-        style={{ width: "100%", borderRadius: "10px" }}
-      />
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <a href={link} target="_blank" rel="noreferrer">
-        View Project
-      </a>
-    </div>
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="project-card-link"
+    >
+      <div className="project-card">
+        <img src={image} alt={title} className="project-image" />
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <span className="view-project">View Project</span>
+      </div>
+    </a>
   );
 };
 

@@ -1,0 +1,55 @@
+.project-card {
+  width: 280px; /* increased from 250px */
+  margin: 15px;
+  padding: 15px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+  width: 100%; /* fill the card width */
+  height: 100%; /* fill the card height */
+  object-fit: cover; /* maintain aspect ratio but fill the container */
+  border-radius: 10px; /* optional: match card rounding */
+}
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image inside card */
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* View Project link */
+.view-project {
+  display: inline-block;
+  font-size: 1.1rem; /* bigger */
+  text-align: center;
+  margin-top: 10px;
+  padding: 6px 12px;
+  color: #fff;
+  background-color: #7ac1d6;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.view-project:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
+}
+
+/* Remove default link styles */
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+}
