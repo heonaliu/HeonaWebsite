@@ -95,3 +95,14 @@
   font-size: clamp(20px, 3vw, 32px);
   margin-bottom: 12px;
 }
+
+.art-link {
+  color: #7ac1d6; /* your chosen color */
+  text-decoration: none; /* remove underline by default */
+  transition: color 0.3s ease; /* smooth hover transition */
+}
+
+.art-link:hover {
+  color: #4ca4be; /* slightly darker/lighter on hover */
+  text-decoration: underline; /* optional underline on hover */
+}

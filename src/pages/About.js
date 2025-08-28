@@ -11,6 +11,8 @@ import graphic2 from "../assets/images/graphic2.png";
 import exchange2 from "../assets/images/exchange2.png";
 import programming from "../assets/images/programming.png";
 
+import { Link } from "react-router-dom";
+
 //AboutVideo
 import AboutVideo from "../components/AboutVideo";
 
@@ -38,11 +40,20 @@ const About = () => {
         <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
           <h3>Digital Art</h3>
           <p>
-            Summary about your digital art here...Lorem ipsum dolor sit amet
-            consectetur adipiscing elit. Consectetur adipiscing elit quisque
-            faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat
-            in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus
-            duis convallis tempus leo eu aenean.
+            Since 2020, I was a passionate digital artist. My digital art
+            journey has allowed me to pay attention to small but critical
+            details while also being one of the best examples of growth
+            throughout my life. I love to draw and participate in art contests
+            in my free time. I love to incorporate my artistic skills in
+            projects, school, for friends, and even the development of this
+            website.
+          </p>
+          <p>
+            You can read more and see more of my artworks in the{" "}
+            <Link to="/art" className="art-link">
+              Art
+            </Link>{" "}
+            tab
           </p>
         </div>
 
