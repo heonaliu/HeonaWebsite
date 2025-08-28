@@ -43,10 +43,10 @@ const Art = () => {
     { image: art6, note: "Artfight - July 2024" },
     {
       image: art7,
-      note: "Competition Entry for iiNoodleDoodleii (YT) - July 2024",
+      note: "Competition Entry for iiNoodleDoodleii (YT) - (July 2024)",
     },
-    { image: art8, note: "Artfight Attack - July 2024" },
-    { image: art9, note: "Artfight Attack - July 2024" },
+    { image: art8, note: "Artfight Attack - (July 2024)" },
+    { image: art9, note: "Artfight Attack - (July 2024)" },
     {
       image: art10,
       note: "Carl F. Gauss for Pi Day as an Exchange Student - July 2024",
@@ -64,24 +64,24 @@ const Art = () => {
       note: "Scratch: Art Trade - (June 2022)",
     },
     { image: early6, note: "Gift For My Sister - (2023)" },
-    { image: early7, note: "Discord Heart Emote Gift - June 2022" },
+    { image: early7, note: "Discord Heart Emote Gift - (Jun 2022)" },
     { image: early8, note: "Scratch: Art Contest Entry - (Sept 2024)" },
     {
       image: early9,
-      note: "Queztzal Art on Google Drawings: Lilac Breasted Roller - Apr 2023",
+      note: "Queztzal Art on Google Drawings: Lilac Breasted Roller - (Apr 2023)",
     },
     {
       image: early10,
-      note: "Scratch: Art Contest Entry - Dec 2020",
+      note: "Scratch: Art Contest Entry - (Dec 2020)",
     },
-    { image: early11, note: "Scratch: Art Contest - Jan 2020" },
-    { image: early12, note: "Scratch: Bitmap Art - Nov 2020" },
+    { image: early11, note: "Scratch: Art Contest - (Jan 2020)" },
+    { image: early12, note: "Scratch: Bitmap Art - (Nov 2020)" },
   ];
 
   return (
     <div style={{ paddingTop: "40px" }}>
       <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
-        Art Portfolio
+        Digital Art Portfolio
       </h2>
       <ArtSlider
         artworks={recentArt}
@@ -114,12 +114,12 @@ const Art = () => {
                 >
                   Artfight
                 </a>
-                : An artist's version of dodgeball. Attack your opponents by
-                drawing their characters and they can revenge by drawing yours!
-                Part of the joy of digital art is being able to see other
-                artists draw your character. The many different takes and styles
-                I've seen my character drawn in feels so rewarding, knowing I've
-                come so far. Enjoy my pieces!
+                : An artist's version of dodgeball. Every year in July, attack
+                your opponents by drawing their characters and they can revenge
+                by drawing yours! Part of the joy of digital art is being able
+                to see other artists draw your character. The many different
+                takes and styles I've seen my character drawn in feels so
+                rewarding, knowing I've come so far. Enjoy my pieces!
               </p>
               <p>
                 *Competition Entry for @sakuraopal -- (2025): This took a
@@ -139,7 +139,7 @@ const Art = () => {
         description={{
           title: "The Beginnings",
           content:
-            "During the pandemic was when I invested in my first iPad! It was definitely a big purchase for an 11 year old. I got my first stylus and started diving face first into the digital art world. Even after watching countless YouTube tutorials, doing countless studies and having my style switch on a daily basis, I -- still to this day -- haven't found a style that I stick with.\n\nWhile I was still developing my art style, I did a lot of art contests and art trades on a children's coding site (Scratch). When I was on Scratch I went by an alias, hence the different name in watermarks. \n\n As my love in digital art grew, so did the support and friendships I gained in the art community. The constant learning and growth is what kept me dedicated and passionate to this hobby. As a young artist, I managed to gain experience doing small commissions in exchange for Discord Nitro. The feeling of finishing an art piece, knowing I'll be bringing someone a smile is what I love the most about this journey. I continue to utilize my talent and skills to bring that joy to my friends and family.",
+            "During the pandemic was when I invested in my first iPad! It was definitely a big purchase for an 11 year old. I got my first stylus and started diving face first into the digital art world. Even after watching countless YouTube tutorials, doing countless studies and having my style switch on a daily basis, I -- still to this day -- haven't found a style that I stick with.\n\nWhile I was still developing my art style, I did a lot of art contests and art trades on a children's coding site (Scratch). When I was on Scratch I went by an alias, hence the different name in watermarks. \n\n As my love in digital art grew, so did the support and friendships I gained in the art community. The constant learning and growth is what kept me dedicated and passionate to this hobby. As a young artist, I managed to gain experience doing small commissions in exchange for Discord Nitro. The feeling of finishing an art piece, knowing I'll be bringing someone a smile is what I love the most about this journey. I continue to utilize my talent and skills to bring that joy to my friends and family. \n\n Fun Fact: I was nominated to draw my elementary and middle school's yearbook covers!",
         }}
       />
     </div>
