@@ -11,6 +11,7 @@ import art7 from "../assets/images/art7.png";
 import art8 from "../assets/images/art8.png";
 import art9 from "../assets/images/art9.png";
 import art10 from "../assets/images/art10.png";
+import art11 from "../assets/images/art11.png";
 
 //early Art
 import early1 from "../assets/images/earlyArt/earlyArt1.png";
@@ -33,29 +34,48 @@ const Art = () => {
       note: "Art Trade: Character - Hua Cheng (天官赐福) — (2024)",
     },
     { image: art2, note: "Character Art: Rendering Experiment — (2025)" },
-    { image: art3, note: "Competition Entry For @sakuraopal* — (2025)" },
+    { image: art3, note: "Competition Entry For sakuraopal (YT)* — (2025)" },
     { image: art4, note: "Eye studies - July 2024" },
-    { image: art5, note: "Image Study - July 2024" },
-    { image: art6, note: "Competition Entry - July 2024" },
-    { image: art7, note: "Artfight 2025 - July 2024" },
-    { image: art8, note: "Artfight 2025- July 2024" },
-    { image: art9, note: "Artfight 2025 - July 2024" },
-    { image: art10, note: "Gauss - July 2024" },
+    {
+      image: art5,
+      note: "Art Stylization Experiment  - Dec 2024",
+    },
+    { image: art6, note: "Artfight - July 2024" },
+    {
+      image: art7,
+      note: "Competition Entry for iiNoodleDoodleii (YT) - July 2024",
+    },
+    { image: art8, note: "Artfight Attack - July 2024" },
+    { image: art9, note: "Artfight Attack - July 2024" },
+    {
+      image: art10,
+      note: "Carl F. Gauss for Pi Day as an Exchange Student - July 2024",
+    },
+    { image: art11, note: "Badminton Shuttle: 1 Layer Challenge — (2025)" },
   ];
 
   const earlyArt = [
-    { image: early1, note: "Art Trade — drawn in 2023" },
-    { image: early2, note: "Character Art — completed in 2022" },
-    { image: early3, note: "Competition Entry — (2021)" },
-    { image: early4, note: "Eye studies - July 2024" },
-    { image: early5, note: "Image Study - July 2024" },
-    { image: early6, note: "Competition Entry - July 2024" },
-    { image: early7, note: "Artfight 2025 - July 2024" },
-    { image: early8, note: "Artfight 2025- July 2024" },
-    { image: early9, note: "Artfight 2025 - July 2024" },
-    { image: early10, note: "Gauss - July 2024" },
-    { image: early11, note: "Artfight 2025- July 2024" },
-    { image: early12, note: "Artfight 2025 - July 2024" },
+    { image: early1, note: "Art Trade — (2023)" },
+    { image: early2, note: "Commission — (2022)" },
+    { image: early3, note: "Scratch: Art Trade — (Jun 2022)" },
+    { image: early4, note: "Scratch: Art Contest Entry - (2022)" },
+    {
+      image: early5,
+      note: "Scratch: Art Trade - (June 2022)",
+    },
+    { image: early6, note: "Gift For My Sister - (2023)" },
+    { image: early7, note: "Discord Heart Emote Gift - June 2022" },
+    { image: early8, note: "Scratch: Art Contest Entry - (Sept 2024)" },
+    {
+      image: early9,
+      note: "Queztzal Art on Google Drawings: Lilac Breasted Roller - Apr 2023",
+    },
+    {
+      image: early10,
+      note: "Scratch: Art Contest Entry - Dec 2020",
+    },
+    { image: early11, note: "Scratch: Art Contest - Jan 2020" },
+    { image: early12, note: "Scratch: Bitmap Art - Nov 2020" },
   ];
 
   return (
@@ -94,7 +114,9 @@ const Art = () => {
                 >
                   Artfight
                 </a>
-                : Part of the joy of digital art is being able to see other
+                : An artist's version of dodgeball. Attack your opponents by
+                drawing their characters and they can revenge by drawing yours!
+                Part of the joy of digital art is being able to see other
                 artists draw your character. The many different takes and styles
                 I've seen my character drawn in feels so rewarding, knowing I've
                 come so far. Enjoy my pieces!
