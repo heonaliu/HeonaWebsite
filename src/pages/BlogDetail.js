@@ -40,8 +40,13 @@ const BlogDetail = ({ blogs }) => {
       .catch((error) => console.error("Anonymous sign-in failed:", error));
 
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-      if (user) console.log("Current User UID:", user.uid);
+      if (user) {
+        console.log("Current User in auth state change:", user.uid);
+        setCurrentUser(user);
+      } else {
+        console.log("No user signed in");
+        setCurrentUser(null);
+      }
     });
 
     return () => unsubscribe();

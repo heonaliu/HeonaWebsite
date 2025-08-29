@@ -18,7 +18,10 @@ const ArtSlider = ({ artworks, description }) => {
       {/* Left side descriptive text */}
       <div className="art-text">
         <h3>{description.title}</h3>
-        <p className="slider-text">{description.content}</p>
+        <div
+          className="slider-text"
+          dangerouslySetInnerHTML={{ __html: description.content }}
+        ></div>
       </div>
 
       {/* Right side slider */}
