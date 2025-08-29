@@ -9,7 +9,6 @@ import art2 from "../assets/images/art2.png";
 import graphic1 from "../assets/images/graphic.png";
 import graphic2 from "../assets/images/graphic2.png";
 import exchange2 from "../assets/images/exchange2.png";
-import programming from "../assets/images/programming.png";
 
 import { Link } from "react-router-dom";
 
@@ -262,13 +261,6 @@ const About = () => {
             </Link>{" "}
             tab.
           </p>
-        </div>
-        <div style={{ flex: 1 }}>
-          <img
-            src={programming}
-            alt="Art"
-            style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
-          />
         </div>
       </div>
 
