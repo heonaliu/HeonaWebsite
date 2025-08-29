@@ -66,7 +66,7 @@
 .art-slide img {
   display: block; /* remove inline spacing */
   width: auto; /* natural width */
-  height: auto; /* natural height */
+  height: 70vh; /* natural height */
   max-width: 100%; /* responsive downscale */
   max-height: 400px; /* optional max height for consistency */
   object-fit: contain;
@@ -167,7 +167,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 10001;
   padding: 20px;
 }
 
@@ -185,7 +185,7 @@
   width: auto;
   height: auto;
   max-width: 90vw; /* fit within viewport width */
-  max-height: 80vh; /* fit within viewport height */
+  max-height: 90vh; /* fit within viewport height */
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   display: block;
