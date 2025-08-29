@@ -17,7 +17,7 @@ const blogsData = [
     date: "August 28, 2025",
     summary: "After several days of vibing and programming...",
     content:
-      "After many, many hours of debugging, asking questions, and implementing ideas, I finally finished my own website. This was one of my goals for this summer, and I am actually impressed and extremely proud of myself for pushing far beyond what I thought I could. I truly never believed I could go this far. Looking at this website makes me smile because I managed to overcome my mental barriers.\n\n Just because of this one idea, if I hadn't taken the initiative to start, I wouldn't have known I could accomplish so much. Thank you so much for checking out my website.",
+      "After many, many hours of debugging, asking questions, and implementing ideas, I finally finished my own website. This was one of my goals for this summer, and I am actually impressed and extremely proud of myself for pushing far beyond what I thought I could. I truly never believed I could go this far. Looking at this website makes me smile because I managed to overcome my mental barriers.\n\n Just because of this one idea, if I hadn't taken the initiative to start, I wouldn't have known I could accomplish so much. Throughout this journey of building my website, I learned so much—about trial and error, creating a database with Google Firebase (for the like buttons and comments), how components work together, troubleshooting, commiting and pushing to Github and much more. Thank you so much for checking out my website.",
   },
 ];
 

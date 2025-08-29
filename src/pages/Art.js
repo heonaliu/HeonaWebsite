@@ -80,7 +80,9 @@ const Art = () => {
 
   return (
     <div style={{ paddingTop: "40px" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+      <h2
+        style={{ fontSize: "2rem", textAlign: "center", marginBottom: "20px" }}
+      >
         Digital Art Portfolio
       </h2>
       <ArtSlider
@@ -133,7 +135,11 @@ const Art = () => {
         }}
       />
 
-      <h2 style={{ textAlign: "center", margin: "40px 0 20px" }}>Early Art</h2>
+      <h2
+        style={{ fontSize: "2rem", textAlign: "center", margin: "40px 0 20px" }}
+      >
+        Early Art
+      </h2>
       <ArtSlider
         artworks={earlyArt}
         description={{
