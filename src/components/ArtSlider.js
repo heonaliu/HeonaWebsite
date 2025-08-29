@@ -3,7 +3,7 @@ import "./ArtSlider.css";
 
 const ArtSlider = ({ artworks, description }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [expandedImage, setExpandedImage] = useState(null); // 🔹 new state
+  const [expandedImage, setExpandedImage] = useState(null);
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? artworks.length - 1 : prev - 1));
@@ -18,10 +18,17 @@ const ArtSlider = ({ artworks, description }) => {
       {/* Left side descriptive text */}
       <div className="art-text">
         <h3>{description.title}</h3>
-        <div
-          className="slider-text"
-          dangerouslySetInnerHTML={{ __html: description.content }}
-        ></div>
+
+        {/* Render content safely */}
+        {Array.isArray(description.content) ? (
+          description.content.map((para, i) => (
+            <p className="slider-text" key={i}>
+              {para}
+            </p>
+          ))
+        ) : (
+          <p className="slider-text">{description.content}</p>
+        )}
       </div>
 
       {/* Right side slider */}
@@ -34,11 +41,11 @@ const ArtSlider = ({ artworks, description }) => {
             <div className="art-slide" key={index}>
               <div
                 className="image-wrapper hover-zoom"
-                onClick={() => setExpandedImage(art.image)} // 🔹 click to expand
+                onClick={() => setExpandedImage(art.image)}
               >
                 <img src={art.image} alt={`Artwork ${index + 1}`} />
               </div>
-              <p className="art-note">{art.note}</p>
+              {art.note && <p className="art-note">{art.note}</p>}
             </div>
           ))}
         </div>
@@ -63,15 +70,12 @@ const ArtSlider = ({ artworks, description }) => {
         </div>
       </div>
 
-      {/* 🔹 Expanded modal */}
+      {/* Expanded modal */}
       {expandedImage && (
-        <div
-          className="expanded-modal"
-          onClick={() => setExpandedImage(null)} // close on backdrop click
-        >
+        <div className="expanded-modal" onClick={() => setExpandedImage(null)}>
           <div
             className="expanded-content"
-            onClick={(e) => e.stopPropagation()} // prevent accidental close
+            onClick={(e) => e.stopPropagation()}
           >
             <button
               className="close-btn"

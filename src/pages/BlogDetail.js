@@ -239,12 +239,14 @@ const BlogDetail = ({ blogs }) => {
                 <small>
                   — {c.name || "Anonymous"} on {c.date}
                 </small>
-                <button
-                  className="delete-comment-btn"
-                  onClick={() => deleteComment(c)}
-                >
-                  Delete
-                </button>
+                {process.env.REACT_APP_IS_DEV === "true" && (
+                  <button
+                    className="delete-comment-btn"
+                    onClick={() => deleteComment(c)}
+                  >
+                    Delete
+                  </button>
+                )}
               </div>
             ))
           )}
