@@ -43,7 +43,11 @@ const ArtSlider = ({ artworks, description }) => {
                 className="image-wrapper hover-zoom"
                 onClick={() => setExpandedImage(art.image)}
               >
-                <img src={art.image} alt={`Artwork ${index + 1}`} />
+                <img
+                  src={art.image}
+                  alt={`Artwork ${index + 1}`}
+                  loading="lazy"
+                />
               </div>
               {art.note && <p className="art-note">{art.note}</p>}
             </div>
