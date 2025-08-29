@@ -1,12 +1,12 @@
 .scrolling-text-wrapper {
-  height: 3rem; /* adjust based on font size */
+  height: 5rem; /* adjust based on font size */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .scrolling-text-item {

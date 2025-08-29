@@ -6,9 +6,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <h1 className="center-text">Heona Liu</h1>
-      <h2
-        style={{ textAlign: "center", fontSize: "2.5rem", marginTop: "20px" }}
-      >
+      <h2 style={{ textAlign: "center", fontSize: "2rem", marginTop: "20px" }}>
         I am a
       </h2>
       <ScrollingText
