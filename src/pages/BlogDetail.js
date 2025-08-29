@@ -27,35 +27,39 @@ const BlogDetail = ({ blogs }) => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+
   const commentsRef = useRef(null);
 
   // Firebase Auth
   const auth = getAuth();
   const [currentUser, setCurrentUser] = useState(null);
 
-  // Sign in anonymously and listen for auth state changes
+  // Ensure user signed in
+  async function ensureUserSignedIn() {
+    if (!auth.currentUser) {
+      try {
+        await signInAnonymously(auth);
+      } catch (error) {
+        console.error("Anonymous sign-in failed:", error);
+      }
+    }
+  }
+
   useEffect(() => {
     signInAnonymously(auth)
       .then(() => console.log("Signed in anonymously"))
       .catch((error) => console.error("Anonymous sign-in failed:", error));
 
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log("Current User in auth state change:", user.uid);
-        setCurrentUser(user);
-      } else {
-        console.log("No user signed in");
-        setCurrentUser(null);
-      }
+      setCurrentUser(user || null);
     });
 
     return () => unsubscribe();
   }, [auth]);
 
-  // Firestore document reference
   const blogRef = doc(db, "blogs", id);
 
-  // Load likes and comments from Firestore
+  // Load likes/comments
   useEffect(() => {
     const fetchBlogData = async () => {
       const docSnap = await getDoc(blogRef);
@@ -63,7 +67,6 @@ const BlogDetail = ({ blogs }) => {
         const data = docSnap.data();
         setLikeCount(data.likeCount || 0);
         setComments(data.comments || []);
-        // Set liked state if currentUser exists
         if (currentUser) {
           setLiked(data.likedUsers?.includes(currentUser.uid) || false);
         }
@@ -79,36 +82,38 @@ const BlogDetail = ({ blogs }) => {
 
   // Toggle like
   const toggleLike = async () => {
-    if (!currentUser) {
-      console.log("User not ready yet");
-      return;
-    } // safety check
+    await ensureUserSignedIn();
+    if (!currentUser) return;
 
     const newLiked = !liked;
     setLiked(newLiked);
 
-    let newCount = likeCount;
+    const newCount = newLiked ? likeCount + 1 : likeCount - 1;
 
-    if (newLiked) {
-      newCount += 1;
-      await updateDoc(blogRef, {
-        likeCount: newCount,
-        likedUsers: arrayUnion(currentUser.uid),
-      });
-    } else {
-      newCount -= 1;
-      await updateDoc(blogRef, {
-        likeCount: newCount,
-        likedUsers: arrayRemove(currentUser.uid),
-      });
+    try {
+      if (newLiked) {
+        await updateDoc(blogRef, {
+          likeCount: newCount,
+          likedUsers: arrayUnion(currentUser.uid),
+        });
+      } else {
+        await updateDoc(blogRef, {
+          likeCount: newCount,
+          likedUsers: arrayRemove(currentUser.uid),
+        });
+      }
+      setLikeCount(newCount);
+    } catch (err) {
+      console.error("Error updating like:", err);
+      setErrorMessage("Failed to update like.");
     }
-
-    setLikeCount(newCount);
   };
 
   // Post comment
   const postComment = async (e) => {
     e.preventDefault();
+    await ensureUserSignedIn();
+    if (!currentUser) return;
 
     const errors = [];
     if (!newComment.name.trim()) errors.push("Author can't be blank.");
@@ -122,8 +127,6 @@ const BlogDetail = ({ blogs }) => {
       return;
     }
 
-    setErrorMessage("");
-
     const today = new Date();
     const formattedDate = today.toLocaleDateString("en-US", {
       month: "long",
@@ -131,27 +134,37 @@ const BlogDetail = ({ blogs }) => {
       year: "numeric",
     });
 
-    const commentToAdd = { ...newComment, date: formattedDate };
-    setComments([commentToAdd, ...comments]);
-    setNewComment({ name: "", text: "" });
-    setSuccessMessage("Comment posted successfully! Thank you!");
-    setTimeout(() => setSuccessMessage(""), 3000);
+    const commentToAdd = {
+      ...newComment,
+      date: formattedDate,
+      userId: currentUser.uid,
+    };
 
-    // Add comment to Firestore
-    await updateDoc(blogRef, { comments: arrayUnion(commentToAdd) });
+    try {
+      await updateDoc(blogRef, { comments: arrayUnion(commentToAdd) });
+      setComments([commentToAdd, ...comments]);
+      setNewComment({ name: "", text: "" });
+      setSuccessMessage("Comment posted successfully!");
+      setTimeout(() => setSuccessMessage(""), 3000);
+    } catch (err) {
+      console.error("Error posting comment:", err);
+      setErrorMessage("Failed to post comment.");
+    }
   };
 
-  // Delete comment (manual dev delete)
+  // Delete comment
   const deleteComment = async (commentToDelete) => {
+    await ensureUserSignedIn();
+    if (!currentUser || commentToDelete.userId !== currentUser.uid) return;
+
     const confirmed = window.confirm(
       "Are you sure you want to delete this comment?"
     );
     if (!confirmed) return;
 
     try {
-      await updateDoc(blogRef, {
-        comments: comments.filter((c) => c !== commentToDelete),
-      });
+      await updateDoc(blogRef, { comments: arrayRemove(commentToDelete) });
+      setComments(comments.filter((c) => c !== commentToDelete));
       setSuccessMessage("Comment deleted successfully!");
       setTimeout(() => setSuccessMessage(""), 3000);
     } catch (err) {
@@ -184,7 +197,6 @@ const BlogDetail = ({ blogs }) => {
 
         <p style={{ whiteSpace: "pre-line" }}>{blog.content}</p>
 
-        {/* Like button always visible, disabled until currentUser is ready */}
         <button
           className="like-btn"
           onClick={toggleLike}
@@ -210,25 +222,10 @@ const BlogDetail = ({ blogs }) => {
 
         <div ref={commentsRef} className="comments-section">
           <h3>Comments</h3>
-
           {successMessage && (
             <div className="success-msg">{successMessage}</div>
           )}
-          {errorMessage && (
-            <div
-              className="error-msg"
-              style={{
-                color: "#f15c5c",
-                background: "#f5c7bd",
-                padding: "10px",
-                marginBottom: "10px",
-                borderRadius: "5px",
-                whiteSpace: "pre-line",
-              }}
-            >
-              {errorMessage}
-            </div>
-          )}
+          {errorMessage && <div className="error-msg">{errorMessage}</div>}
 
           {currentComments.length === 0 ? (
             <p>No comments yet.</p>
@@ -239,7 +236,7 @@ const BlogDetail = ({ blogs }) => {
                 <small>
                   — {c.name || "Anonymous"} on {c.date}
                 </small>
-                {process.env.REACT_APP_IS_DEV === "true" && (
+                {c.userId === currentUser?.uid && (
                   <button
                     className="delete-comment-btn"
                     onClick={() => deleteComment(c)}
