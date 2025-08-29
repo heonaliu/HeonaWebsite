@@ -6,7 +6,7 @@ const BlogList = ({ blogs = [] }) => {
   const navigate = useNavigate();
 
   const handleBlogClick = (id) => {
-    navigate(`/blog/${id}#comments`);
+    navigate(`/blog/${id}`);
   };
 
   if (blogs.length === 0) {
