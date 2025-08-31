@@ -1,39 +1,23 @@
 import React from "react";
 import art1 from "../assets/images/art3.png";
-import "./About.css";
-// import art2 from "../assets/images/art2.png";
+import art2 from "../assets/images/art2.png";
 import exchange from "../assets/images/exchange-group.png";
+import exchange2 from "../assets/images/exchange2.png";
 import badminton from "../assets/images/badminton.png";
 import ballet from "../assets/images/ballet.png";
-import art2 from "../assets/images/art2.png";
 import graphic1 from "../assets/images/graphic.png";
 import graphic2 from "../assets/images/graphic2.png";
-import exchange2 from "../assets/images/exchange2.png";
-
+import "./About.css";
 import { Link } from "react-router-dom";
 
 const About = () => {
-  //   const digitalArtVideo = "https://www.w3schools.com/html/mov_bbb.mp4";
-
   return (
-    <div
-      className="fade-in"
-      style={{ display: "flex", flexDirection: "column", padding: "20px" }}
-    >
-      <h2
-        style={{
-          textAlign: "center",
-          fontSize: "3rem",
-          fontWeight: "700",
-          marginBottom: "60px", // space between header and first section
-          width: "100%",
-        }}
-      >
-        About Me
-      </h2>
+    <div className="about-container fade-in">
+      <h2 className="about-title">About Me</h2>
 
-      <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
+      {/* Digital Art Section */}
+      <div className="about-section">
+        <div className="about-text">
           <h3>Digital Art</h3>
           <p>
             Since 2020, I have been a passionate digital artist. My digital art
@@ -52,15 +36,15 @@ const About = () => {
             tab.
           </p>
         </div>
-
         <div className="digital-art-images">
           <img src={art1} alt="Art" className="digital-art-img" />
           <img src={art2} alt="Art" className="digital-art-img" />
         </div>
       </div>
 
-      <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div className="about-text" style={{ flex: 1, paddingRight: "20px" }}>
+      {/* YouTube Section */}
+      <div className="about-section">
+        <div className="about-text">
           <h3>Youtube</h3>
           <p>
             I officially joined YouTube in January 2023 on another channel that
@@ -77,17 +61,16 @@ const About = () => {
             >
               @sleepymeilows
             </a>
-            {", "}
-            has about 2.82k subscribers and a total of over 3.2 million views. I
-            usually post art trends, piano content, and fun snippets of my life.
-            I love using YouTube to showcase my digital artworks!
+            , has about 2.82k subscribers and a total of over 3.2 million views.
+            I usually post art trends, piano content, and fun snippets of my
+            life.
           </p>
           <p>
             The YouTube Short on the right is an art trend I created in June
             2025, which went viral, reaching over 2.4 million views.
           </p>
         </div>
-        <div style={{ flex: 1 }} className="youtube-short-container">
+        <div className="youtube-short-container">
           <iframe
             src="https://www.youtube.com/embed/wnrlNctF3ws"
             title="YouTube Short"
@@ -98,11 +81,9 @@ const About = () => {
         </div>
       </div>
 
-      <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div
-          className="about-text piano-video-wrapper"
-          style={{ flex: 2, paddingRight: "20px" }}
-        >
+      {/* Piano Section */}
+      <div className="about-section">
+        <div className="about-text">
           <h3>Piano</h3>
           <p>
             I've been musically active and playing the piano since I was 8 years
@@ -110,51 +91,28 @@ const About = () => {
             quite a long time and have really enjoyed learning new pieces. As
             school has become busier, I made the difficult decision to
             discontinue lessons, but I will forever stay musical at heart.
-            Learning piano has allowed me to develop a sense of rhythm, a love
-            for classical music, and has been a helpful tool in my ballet
-            classes.
           </p>
-
           <p>
-            {" "}
             The video on the right shows me playing Tarentella by A. Pieczonka
             (Spring 2023) at a New England Piano Teacher's Association (NEPTA)
             recital. This is a juried recital, meaning piano teachers select
-            only a few students to perform.{" "}
+            only a few students to perform.
           </p>
         </div>
-
-        <div style={{ flex: 1 }}>
-          <div
-            style={{
-              position: "relative",
-              width: "100%", // match container width
-              paddingTop: "56.25%", // 16:9 aspect ratio (9/16 = 0.5625)
-              marginTop: "10px",
-              borderRadius: "15px",
-              overflow: "hidden",
-            }}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/MI-CjcbU4pE"
-              title="Piano Video"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                border: "0",
-              }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+        <div className="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/MI-CjcbU4pE"
+            title="Piano Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
 
-      <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
+      {/* Exchange Student Section */}
+      <div className="about-section">
+        <div className="about-text">
           <h3>Exchange Student</h3>
           <p>
             A fun fact: I was an exchange student! Our high school exchange
@@ -168,22 +126,16 @@ const About = () => {
             immersive experience in a completely new culture, language, and way
             of life. It was a life-changing time for me.
           </p>
-          <p>
-            We got to experience what it was like to be students in the Beijing
-            Jingshan School in China. We met many different people and traveled
-            across China, embracing challenges and overcoming obstacles. This
-            program taught me a lot about flexibility, time management, and
-            observing my environment.
-          </p>
         </div>
         <div className="image-group">
-          <img src={exchange} alt="Design" className="responsive-img" />
-          <img src={exchange2} alt="Design" className="responsive-img" />
+          <img src={exchange} alt="Exchange" className="responsive-img" />
+          <img src={exchange2} alt="Exchange" className="responsive-img" />
         </div>
       </div>
 
-      <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
+      {/* Badminton Section */}
+      <div className="about-section">
+        <div className="about-text">
           <h3>Badminton Player</h3>
           <p>
             Inspired by my dad and friends, I picked up badminton in my freshman
@@ -196,27 +148,18 @@ const About = () => {
             competitions with my team. My favorite part is spending time with
             friends while staying in shape.
           </p>
-          <p>
-            During my exchange program, I continued to develop my badminton
-            skills by playing alongside teachers and mentors after lunch nearly
-            every day. In my free time, I enjoy watching badminton videos and
-            learning tips to improve my game.
-          </p>
         </div>
-        <div style={{ flex: 1 }}>
-          <img
-            src={badminton}
-            alt="Art"
-            style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
-          />
+        <div className="image-group">
+          <img src={badminton} alt="Badminton" className="responsive-img" />
         </div>
       </div>
 
-      <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
+      {/* Ballet Section */}
+      <div className="about-section">
+        <div className="about-text">
           <h3>Ballet Dancer</h3>
           <p>
-            Ballet is another major part of my life. I’ve been dancing for
+            Ballet is another major part of my life. I've been dancing for
             almost 10 years. It has taught me teamwork, discipline, and how to
             stay in shape. I practiced ballet and pointe work for about three
             years before needing to take a step back due to Achilles tendon
@@ -232,22 +175,18 @@ const About = () => {
             >
               Shuk Susan Lee
             </a>
-            {", "}
-            who is an amazing pastel artist and has won many awards for her
+            , who is an amazing pastel artist and has won many awards for her
             artworks.
           </p>
         </div>
-        <div style={{ flex: 1 }}>
-          <img
-            src={ballet}
-            alt="Art"
-            style={{ width: "100%", borderRadius: "15px", marginTop: "10px" }}
-          />
+        <div className="image-group">
+          <img src={ballet} alt="Ballet" className="responsive-img" />
         </div>
       </div>
 
-      <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
+      {/* Programmer Section */}
+      <div className="about-section">
+        <div className="about-text">
           <h3>Programmer</h3>
           <p>
             Since I was young, I have been an avid Scratch user. I loved
@@ -264,15 +203,16 @@ const About = () => {
         </div>
       </div>
 
-      <div style={{ display: "flex", marginBottom: "40px" }}>
-        <div className="about-text" style={{ flex: 2, paddingRight: "20px" }}>
+      {/* Graphic Design Section */}
+      <div className="about-section">
+        <div className="about-text">
           <h3>Graphic Design</h3>
           <p>
             Building on my digital art journey, graphic design was the next step
             to take everything to the next level. I have always loved the idea
             of putting my art on a T-shirt or notepad—something practical that I
-            could use.{" "}
-          </p>{" "}
+            could use.
+          </p>
           <p>
             When I finally got into the Graphics Communications course at my
             high school, I was overjoyed! Although it was only a semester-long
@@ -282,10 +222,9 @@ const About = () => {
             continuing to create in the graphics workshop.
           </p>
         </div>
-
         <div className="image-group">
-          <img src={graphic1} alt="Design" className="responsive-img" />
-          <img src={graphic2} alt="Design" className="responsive-img" />
+          <img src={graphic1} alt="Graphic" className="responsive-img" />
+          <img src={graphic2} alt="Graphic" className="responsive-img" />
         </div>
       </div>
     </div>

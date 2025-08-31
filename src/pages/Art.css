@@ -1,0 +1,18 @@
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column; /* stack vertically */
+    align-items: center; /* center content */
+  }
+
+  .about-text {
+    padding-right: 0;
+    text-align: center; /* optional for aesthetics */
+  }
+
+  .about-image img {
+    width: 80%; /* smaller images on mobile */
+    max-width: 300px; /* optional cap */
+    margin-top: 20px;
+  }
+}
