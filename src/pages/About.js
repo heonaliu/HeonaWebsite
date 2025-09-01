@@ -110,29 +110,6 @@ const About = () => {
         </div>
       </div>
 
-      {/* Exchange Student Section */}
-      <div className="about-section">
-        <div className="about-text">
-          <h3>Exchange Student</h3>
-          <p>
-            A fun fact: I was an exchange student! Our high school exchange
-            program is one of the oldest student-teacher exchange programs
-            between the United States and China. After a four-year hiatus, the
-            program was resumed, and my exchange group was the first
-            post-pandemic group to restart it.
-          </p>
-          <p>
-            From January to May 2025, five other students and I had a fully
-            immersive experience in a completely new culture, language, and way
-            of life. It was a life-changing time for me.
-          </p>
-        </div>
-        <div className="image-group">
-          <img src={exchange} alt="Exchange" className="responsive-img" />
-          <img src={exchange2} alt="Exchange" className="responsive-img" />
-        </div>
-      </div>
-
       {/* Badminton Section */}
       <div className="about-section">
         <div className="about-text">
