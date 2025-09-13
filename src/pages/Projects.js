@@ -50,10 +50,10 @@ const Projects = () => {
       <p>
         Due to the pandemic, my family made the decision to go homeschooled for
         7th grade. During this time, I followed course, and getting exposed to
-        React.js. Meanwhile, I also liked to experiement playing around with
+        React.js. Meanwhile, I also liked to experiment playing around with
         creating a Discord bot with Python by following YouTube videos. Later in
         2021, I enrolled in STEM's Python course; in 2022, I enrolled in their
-        Java course for a semester. course for a semester.
+        Java course for a semester course.
       </p>
       <p>
         In 8th grade, I went back to in-person school and took a pause in my
