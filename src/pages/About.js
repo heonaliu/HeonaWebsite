@@ -199,7 +199,6 @@ const About = () => {
         </div>
         <div className="image-group">
           <img src={graphic1} alt="Graphic" className="responsive-img" />
-          <img src={graphic2} alt="Graphic" className="responsive-img" />
         </div>
       </div>
     </div>
