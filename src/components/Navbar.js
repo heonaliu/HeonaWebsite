@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import channelIcon from "../assets/images/channelIcon.png";
 import youtubeLogo from "../assets/images/youtube.png";
 import githubLogo from "../assets/images/github.png";
-import spotifyLogo from "../assets/images/spotify.png";
 import instagramLogo from "../assets/images/instagram.png";
 import linkedinLogo from "../assets/images/linkedin.png";
 import { FaBars, FaTimes } from "react-icons/fa"; // hamburger icons
@@ -67,13 +66,6 @@ const Navbar = () => {
           rel="noreferrer"
         >
           <img src={linkedinLogo} alt="GitHub" className="icon" />
-        </a>
-        <a
-          href="https://open.spotify.com/user/31bjy62od5bm6oqisg3kh2xnaduq"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={spotifyLogo} alt="Spotify" className="icon" />
         </a>
         <a
           href="https://www.instagram.com/sleepymeilows/"
