@@ -17,7 +17,7 @@ const Home = () => {
           "Exchange Student",
           "Badminton Player",
           "Ballet Dancer",
-          "Graphic Designer",
+          "Web Designer",
           "YouTuber",
           "Video Editor",
         ]}
