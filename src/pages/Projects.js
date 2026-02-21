@@ -1,8 +1,11 @@
 import React from "react";
 import ProjectCard from "../components/ProjectCard";
+import CurrProjectCard from "../components/CurrProjectCard";
 import project1 from "../assets/images/project1.png";
 import project2 from "../assets/images/project2.png";
 import project3 from "../assets/images/project3.png";
+import currProject1 from "../assets/images/tako-welcome.png";
+import currProject2 from "../assets/images/programming-club.png";
 import "./Projects.css";
 
 const Projects = () => {
@@ -29,16 +32,48 @@ const Projects = () => {
     },
   ];
 
+  const currProjects = [
+    {
+      title: "Tako Focus",
+      description:
+        "TakoFocus is a minimalist, productivity web app designed conquer procrastination through focused sessions, and adorable motivation from Tako the octopus",
+      link: "https://takofocus.vercel.app",
+      image: currProject1,
+    },
+
+    {
+      title: "NNHS Programming Club Website",
+      description:
+        "The official website for the programming club at Newton North High School. Built in collaboration by many of the club's members using React and hosted on GitHub Pages ",
+      link: "https://nnhsprogramming.club/",
+      image: currProject2,
+    },
+  ];
+
   return (
     <div className="project-text" style={{ padding: "20px" }}>
       <h2 style={{ fontSize: "3rem", fontWeight: "700" }}>My Projects</h2>
       <p>
-        Hey! This is a place to put my projects. While I don't have many recent
-        projects at the moment, you can consider this website to be a project in
-        of itself. In high school I've taken Intro to Computer Science and
-        Computer Programming classes. Currently, I'm in the process of
-        rebuilding my passion for programming.
+        Hey! This is a place to put my projects. In high school I've taken Intro
+        to Computer Science and Computer Programming classes. I also take part
+        in my school's programming club where we collaborate on problems and
+        compete in competitions like American Computer Science League (ACSL).
+        Currently, I'm in the process of rebuilding my passion for programming
+        through fun projects (like this portfolio website).
       </p>
+
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          marginTop: "20px",
+        }}
+      >
+        {currProjects.map((p, i) => (
+          <CurrProjectCard key={i} {...p} />
+        ))}
+      </div>
       <h2 style={{ fontSize: "2rem", fontWeight: "700" }}>Early Programming</h2>
       <p>
         Since I was 7, my dad introduced me to Scratch! Inspired by projects, I
