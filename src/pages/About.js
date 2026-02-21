@@ -4,7 +4,6 @@ import art2 from "../assets/images/art2.png";
 import badminton from "../assets/images/badminton.png";
 import ballet from "../assets/images/ballet.png";
 import graphic1 from "../assets/images/graphic.png";
-import graphic2 from "../assets/images/graphic2.png";
 import "./About.css";
 import { Link } from "react-router-dom";
 
