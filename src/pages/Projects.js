@@ -44,7 +44,7 @@ const Projects = () => {
     {
       title: "NNHS Programming Club Website",
       description:
-        "The official website for the programming club at Newton North High School. Built in collaboration by many of the club's members using React and hosted on GitHub Pages ",
+        "The official website for Newton North High School's programming club. It was built in collaboration by many of the club's members using React and hosted on GitHub Pages",
       link: "https://nnhsprogramming.club/",
       image: currProject2,
     },
