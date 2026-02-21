@@ -13,9 +13,12 @@ const BlogList = ({ blogs = [] }) => {
     return <p>No blogs available.</p>;
   }
 
+  // Sort blogs by id descending (highest first)
+  const sortedBlogs = [...blogs].sort((a, b) => b.id - a.id);
+
   return (
     <div className="blog-list">
-      {blogs.map((blog) => (
+      {sortedBlogs.map((blog) => (
         <div
           key={blog.id}
           className="blog-card hover-enlarge"
