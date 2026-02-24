@@ -6,6 +6,7 @@ import project2 from "../assets/images/project2.png";
 import project3 from "../assets/images/project3.png";
 import currProject1 from "../assets/images/tako-welcome.png";
 import currProject2 from "../assets/images/programming-club.png";
+import currProject3 from "../assets/images/tako-memory.png";
 import "./Projects.css";
 
 const Projects = () => {
@@ -47,6 +48,13 @@ const Projects = () => {
         "The official website for Newton North High School's programming club. It was built in collaboration by many of the club's members using React and hosted on GitHub Pages",
       link: "https://nnhsprogramming.club/",
       image: currProject2,
+    },
+    {
+      title: "Tako Memory",
+      description:
+        "Flip and match the cards in as few moves as you can! - Followed PedroTech (YT) ReactJS tutorial",
+      link: "https://tako-memory.vercel.app/",
+      image: currProject3,
     },
   ];
 
